@@ -3,6 +3,7 @@ import {
   Container,
   Button,
   Stack,
+  Image,
 } from '@chakra-ui/react';
 import { LinkBox, LinkOverlay, Text, Heading,Box } from '@chakra-ui/react'
 import React from 'react';
@@ -50,7 +51,7 @@ function SoftwareUpdatePage() {
           </Stack>
         </Stack>
       </Container>
-      <LinkBox maxW='1400px' p='5' borderWidth='1px'>
+      <LinkBox maxW='1400px' p='5'>
         <LinkBox backgroundColor = '#afcdea' as='article' maxW='700px' p='5' borderWidth='1px' >
           <Heading size='md'  my='2'>
             <LinkOverlay color='#2f2c79' href='#'>
@@ -69,6 +70,9 @@ function SoftwareUpdatePage() {
           -Si tienes problemas de conexión a Internet durante la actualización del dispositivo, consulta Solucionar Wi-Fi problemas de conexión en Windows.<br/>
           </Text>
       </LinkBox>
+      <Box position='absolute' left='60%' top='20%' boxSize='sm'>
+        <Image left='70%' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+      </Box>
     </LinkBox>
     <br/>
     <LinkBox backgroundColor = '#afcdea' left='20%' as='article' maxW='700px' p='5' borderWidth='1px' >
@@ -89,33 +93,38 @@ function SoftwareUpdatePage() {
       </Text>
     </LinkBox>
     <br/>
-    <LinkBox backgroundColor = '#afcdea' left='48%' as='article' maxW='700px' p='5' borderWidth='1px' >
-      <Heading size='md'  my='2'>
-        <LinkOverlay color='#2f2c79' href='#'>
-        Obtener la actualización más reciente de Windows
-        </LinkOverlay>
-      </Heading>
-      <Text>
-      Periódicamente, Apple publica actualizaciones del software de macOS, que pueden incluir actualizaciones para apps que vienen con tu Mac, así como actualizaciones de seguridad importantes.<br/>
-      <br/>
-      Si recibes una notificación que indica que hay actualizaciones de software disponibles, puedes elegir entre instalarlas o si quieres que se te recuerde al día siguiente. También puedes buscar actualizaciones de macOS manualmente en el panel "Actualización de software" de Preferencias del Sistema.
-      <br/>
-      <br/>
-      En tu Mac, selecciona menú Apple Preferencias del Sistema y haz clic en “Actualización de software” .<br/>
-      <br/>
-      Para instalar las actualizaciones de macOS automáticamente, selecciona “Actualizar mi Mac automáticamente”.<br/>
-      <br/>
-      Para establecer opciones de actualización avanzadas, haz clic en Avanzado y realiza cualquiera de las siguientes acciones:<br/>
-      -Para que la Mac busque actualizaciones automáticamente, selecciona “Buscar actualizaciones”.
-      <br/>
-      -Para que tu Mac descargue actualizaciones sin preguntar, selecciona “Descargar nuevas actualizaciones cuando estén disponibles”.
-      <br/>
-      -Para que la Mac instale las actualizaciones de macOS automáticamente, selecciona “Instalar actualizaciones de macOS”.
-      <br/>
-      -Para que tu Mac instale actualizaciones de apps de App Store automáticamente, selecciona “Instalar las actualizaciones de apps de App Store”.
-      <br/>
-      -Para que la Mac instale los archivos del sistema y las actualizaciones de seguridad automáticamente, selecciona “Instalar archivos de datos del sistema y actualizaciones de seguridad”.
-      </Text>
+    <LinkBox maxW='1400px' p='5'>
+      <LinkBox backgroundColor = '#afcdea' left='48%' as='article' maxW='700px' p='5' borderWidth='1px' >
+        <Heading size='md'  my='2'>
+          <LinkOverlay color='#2f2c79' href='#'>
+          Obtener la actualización más reciente de Windows
+          </LinkOverlay>
+        </Heading>
+        <Text>
+        Periódicamente, Apple publica actualizaciones del software de macOS, que pueden incluir actualizaciones para apps que vienen con tu Mac, así como actualizaciones de seguridad importantes.<br/>
+        <br/>
+        Si recibes una notificación que indica que hay actualizaciones de software disponibles, puedes elegir entre instalarlas o si quieres que se te recuerde al día siguiente. También puedes buscar actualizaciones de macOS manualmente en el panel "Actualización de software" de Preferencias del Sistema.
+        <br/>
+        <br/>
+        En tu Mac, selecciona menú Apple Preferencias del Sistema y haz clic en “Actualización de software” .<br/>
+        <br/>
+        Para instalar las actualizaciones de macOS automáticamente, selecciona “Actualizar mi Mac automáticamente”.<br/>
+        <br/>
+        Para establecer opciones de actualización avanzadas, haz clic en Avanzado y realiza cualquiera de las siguientes acciones:<br/>
+        -Para que la Mac busque actualizaciones automáticamente, selecciona “Buscar actualizaciones”.
+        <br/>
+        -Para que tu Mac descargue actualizaciones sin preguntar, selecciona “Descargar nuevas actualizaciones cuando estén disponibles”.
+        <br/>
+        -Para que la Mac instale las actualizaciones de macOS automáticamente, selecciona “Instalar actualizaciones de macOS”.
+        <br/>
+        -Para que tu Mac instale actualizaciones de apps de App Store automáticamente, selecciona “Instalar las actualizaciones de apps de App Store”.
+        <br/>
+        -Para que la Mac instale los archivos del sistema y las actualizaciones de seguridad automáticamente, selecciona “Instalar archivos de datos del sistema y actualizaciones de seguridad”.
+        </Text>
+      </LinkBox>
+      <Box position='absolute' left='10%' top='20%' boxSize='sm'>
+        <Image left='70%' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+      </Box>
     </LinkBox>
     </>
 
