@@ -70,8 +70,8 @@ function SoftwareUpdatePage() {
           -Si tienes problemas de conexión a Internet durante la actualización del dispositivo, consulta Solucionar Wi-Fi problemas de conexión en Windows.<br/>
           </Text>
       </LinkBox>
-      <Box position='absolute' left='60%' top='20%' boxSize='sm'>
-        <Image left='70%' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+      <Box position='absolute' left='60%' top='5%' boxSize='sm'>
+        <Image boxSize='550px' width='400px' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2j-4nrACwh3ZppkhZbLMWVep-vLZxQWxDrg&usqp=CAU' alt='Dan Abramov' />
       </Box>
     </LinkBox>
     <br/>
