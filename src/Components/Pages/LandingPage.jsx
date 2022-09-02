@@ -1,12 +1,17 @@
 //! Sebastian
 
 import React from 'react';
+import { MainContainer } from '../../Styles/StylesSebastian';
 
 function LandingPage() {
 
   return (
 
-    <div></div>
+    <MainContainer>
+
+    
+
+    </MainContainer>
   )
 
 }
