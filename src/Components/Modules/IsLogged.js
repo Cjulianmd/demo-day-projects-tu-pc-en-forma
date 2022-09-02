@@ -15,7 +15,7 @@ const PublicRoutes = ({ auth, children }) => {
   if (!auth) {
     return children;
   } else {
-    return <Navigate to={'/userhome'} />
+    return <Navigate to={'/'} />
   }
 }
 

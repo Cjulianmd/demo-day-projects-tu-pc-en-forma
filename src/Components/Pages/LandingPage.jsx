@@ -17,7 +17,7 @@ function LandingPage() {
       <LandingImg src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" alt="Logo de Marca" />
 
     </MainContainer>
-    
+
   )
 
 }
