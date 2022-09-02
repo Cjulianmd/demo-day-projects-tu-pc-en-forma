@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import {PrivateRoutes, PublicRoutes} from '../Components/Modules/IsLogged';
 import { useSelector } from 'react-redux';
 import LandingPage from '../Components/Pages/LandingPage';
-import LogInPage from '../Components/Pages/LogInPage';
-import RegisterPage from '../Components/Pages/SingInPage';
+import LogInPage from '../Components/Pages/login/login';
+import RegisterPage from '../Components/Pages/login/create';
 import HomePage from '../Components/Pages/HomePage';
 import ServicesHomePage from '../Components/Pages/ServicesHomePage';
 import PreventiveMaintenancePage from '../Components/Pages/PreventiveMaintenancePage';
@@ -14,8 +14,8 @@ import CorrectiveMaintenancePage from '../Components/Pages/CorrectiveMaintenance
 import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
 
 function AppRoutes() {
-
-  const logged = useSelector(state => state.userLogIn.isLogged);
+   //useSelector(state => state.userLogIn.isLogged);
+  const logged = false
 
 
   return (
