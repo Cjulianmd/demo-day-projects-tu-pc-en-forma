@@ -19,10 +19,14 @@ import {
   MenuDivider,
 
 } from '@chakra-ui/react'
+import { toast } from 'react-toastify';
+import { doc, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
 import * as React from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { useForm } from '../../../Hooks/useForm';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth} from "firebase/auth";
+import { db } from '../../../FireBase/JulianFirebase';
 
 export const Inputsigin = React.forwardRef((props, ref) => {
   const { isOpen, onToggle } = useDisclosure()
@@ -47,9 +51,32 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       })
     }
   }
+  const auth = getAuth();
   const onClicksumit = () => {
-    const auth = getAuth();
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
+      .then(() => {
+        updateProfile(auth.currentUser, { 
+          displayName: formValues.name,
+          phoneNumber: formValues.phone
+        }
+          
+          )
+          .then(() => {
+            sendEmailVerification(auth.currentUser)
+              .then(() => {
+                toast.success('Email verification have been sent.')
+                setDoc(doc(db, 'Clientes', auth.currentUser.uid), {
+                  apellidos: formValues.lastName,
+                  phone: formValues.phone,
+                  email: formValues.email,
+               })
+                  .then(() => {
+                    toast.success('SignIn successful.')
+                  })
+                  reset()
+              })
+          })
+      })
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -66,6 +93,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
         // ..
       });
   }
+
 
   return (
     < >

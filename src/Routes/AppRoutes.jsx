@@ -15,9 +15,9 @@ import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
 
 function AppRoutes() {
 
-  // const logged = useSelector(state => state.userLogIn.isLogged);
+  //const logged = useSelector(state => state.userLogIn.isLogged);
 
-  const logged = true;
+  const logged = false;
 
   return (
 

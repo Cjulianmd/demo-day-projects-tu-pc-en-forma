@@ -8,7 +8,7 @@ function LandingPage() {
 
   const navigation = useNavigate();
 
-  // setTimeout(() => navigation('/home'), 3000);
+  setTimeout(() => navigation('/login'), 3000);
 
   return (
 
