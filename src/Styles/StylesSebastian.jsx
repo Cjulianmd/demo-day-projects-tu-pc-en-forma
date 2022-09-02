@@ -17,3 +17,8 @@ export const HelperContainer = styled.div`
   align-items: center;
   margin: 3rem auto;
 `;
+
+export const LandingImg = styled.img`
+  width: 35%;
+  
+`;
