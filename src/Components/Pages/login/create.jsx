@@ -50,7 +50,7 @@ import { Inputsigin } from './Input'
             </Heading>
             <HStack spacing="1" justify="center">
             <Text color='white'>Do have an account?</Text>
-            <NavLink to="/">
+            <NavLink to="/login">
             <Button variant="link" colorScheme="blue">
               Sign in
             </Button>

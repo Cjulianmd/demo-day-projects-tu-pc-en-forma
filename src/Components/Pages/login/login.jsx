@@ -50,10 +50,9 @@ export const LogIn = () => (
           >
             Log in to your account
           </Heading>
-          <NavLink to="/register">
+          <NavLink to="/signin">
           <HStack spacing="1" justify="center">
             <Text color='white'>Don't have an account?</Text>
-            
             <Button variant="link" colorScheme="blue">
               Sign up
             </Button>
