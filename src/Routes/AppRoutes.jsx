@@ -14,25 +14,26 @@ import CorrectiveMaintenancePage from '../Components/Pages/CorrectiveMaintenance
 import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
 
 function AppRoutes() {
-   //useSelector(state => state.userLogIn.isLogged);
-  const logged = false
 
+  // const logged = useSelector(state => state.userLogIn.isLogged);
+
+  const logged = true;
 
   return (
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PublicRoutes auth={logged}> <LandingPage /> </PublicRoutes>} />
-        <Route path="/login" element={<PublicRoutes auth={logged}> <LogInPage /> </PublicRoutes>} />
-        <Route path="/signin" element={<PublicRoutes auth={logged}> <RegisterPage /> </PublicRoutes>} />
-        <Route path="/home" element={<PublicRoutes auth={logged}> <HomePage /> </PublicRoutes>} />
+        <Route path="/" element={ <LandingPage /> } />
+        <Route path="/login" element={ <LogInPage /> } />
+        <Route path="/signin" element={ <RegisterPage /> } />
+        <Route path="/home" element={ <HomePage /> } />
 
-        <Route path="/services" element={<PrivateRoutes auth={logged}> <ServicesHomePage /> </PrivateRoutes>} />
-        <Route path="/preventive" element={<PrivateRoutes auth={logged}> <PreventiveMaintenancePage /> </PrivateRoutes>} />
-        <Route path="/corrective" element={<PrivateRoutes auth={logged}> <CorrectiveMaintenancePage /> </PrivateRoutes>} />
-        <Route path="/software" element={<PrivateRoutes auth={logged}> <SoftwareUpdatePage /> </PrivateRoutes>} />
+        <Route path="/services" element={ <ServicesHomePage /> } />
+        <Route path="/preventive" element={ <PreventiveMaintenancePage /> } />
+        <Route path="/corrective" element={ <CorrectiveMaintenancePage /> } />
+        <Route path="/software" element={ <SoftwareUpdatePage /> } />
 
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   )
