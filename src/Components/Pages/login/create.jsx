@@ -1,23 +1,28 @@
 import {
-    Box,
-    Button,
-    Container,
-    Divider,
-    Heading,
-    HStack,
-    Stack,
-    Text,
-    useBreakpointValue,
-    useColorModeValue,
-  } from '@chakra-ui/react'
-  import * as React from 'react'
+  Box,
+  Button,
+  Container,
+  Divider,
+  Heading,
+  HStack,
+  Stack,
+  Text,
+  useBreakpointValue,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import * as React from 'react'
 import { NavLink } from 'react-router-dom'
+import Footer from '../../Modules/Footer'
+import SimpleNavBar from '../../Modules/SimpleNavBar'
 import { Inputsigin } from './Input'
-  import { Logo } from './Logo'
-  import { OAuthButtonGroup } from './OAuthButtonGroup'
+import { OAuthButtonGroup } from './OAuthButtonGroup'
 
-  export const Create = () => (
-    document.body.style = 'background: #1F233E; ',
+export const Create = () => (
+
+  <div style={{backgroundColor: '#ffffff'}}>
+
+    <SimpleNavBar />
+
     <Container
       maxW="lg"
       py={{
@@ -29,9 +34,8 @@ import { Inputsigin } from './Input'
         sm: '8',
       }}
     >
-      <Stack spacing="8">
+      <Stack style={{ backgroundColor: '#675cb0', padding: '2rem', borderRadius: '5%' }} spacing="8">
         <Stack spacing="6">
-          <Logo />
           <Stack
             spacing={{
               base: '2',
@@ -46,15 +50,15 @@ import { Inputsigin } from './Input'
               })}
               color='white'
             >
-              Create account
+              Regístrate
             </Heading>
             <HStack spacing="1" justify="center">
-            <Text color='white'>Do have an account?</Text>
-            <NavLink to="/login">
-            <Button variant="link" colorScheme="blue">
-              Sign in
-            </Button>
-            </NavLink>
+              <Text color='white'>¿Estás registrado?</Text>
+              <NavLink to="/login">
+                <Button variant="link" colorScheme="blue">
+                  Inicia sesión
+                </Button>
+              </NavLink>
             </HStack>
           </Stack>
         </Stack>
@@ -80,25 +84,18 @@ import { Inputsigin } from './Input'
             sm: 'xl',
           }}
         >
-          <Stack spacing="6">
+          <Stack style={{ backgroundColor: '#9f90ea', padding: '2rem', borderRadius: '5%' }} spacing="6">
             <Stack spacing="5">
-              <Inputsigin/>
-            </Stack>
-            <Stack spacing="6">
-              <HStack>
-                <Divider />
-                <Text color='white' fontSize="sm" whiteSpace="nowrap">
-                  or continue with
-                </Text>
-                <Divider />
-              </HStack>
-              <OAuthButtonGroup />
+              <Inputsigin />
             </Stack>
           </Stack>
         </Box>
       </Stack>
     </Container>
-  )
-  
-  export default Create;
-  
+
+    <Footer />
+
+  </div>
+)
+
+export default Create;

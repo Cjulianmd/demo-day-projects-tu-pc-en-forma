@@ -1,5 +1,6 @@
 import {
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
   IconButton,
@@ -25,7 +26,7 @@ import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } 
 import * as React from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { useForm } from '../../../Hooks/useForm';
-import { getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { db } from '../../../FireBase/JulianFirebase';
 
 export const Inputsigin = React.forwardRef((props, ref) => {
@@ -55,12 +56,12 @@ export const Inputsigin = React.forwardRef((props, ref) => {
   const onClicksumit = () => {
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
-        updateProfile(auth.currentUser, { 
+        updateProfile(auth.currentUser, {
           displayName: formValues.name,
           phoneNumber: formValues.phone
         }
-          
-          )
+
+        )
           .then(() => {
             sendEmailVerification(auth.currentUser)
               .then(() => {
@@ -69,11 +70,11 @@ export const Inputsigin = React.forwardRef((props, ref) => {
                   apellidos: formValues.lastName,
                   phone: formValues.phone,
                   email: formValues.email,
-               })
+                })
                   .then(() => {
                     toast.success('SignIn successful.')
                   })
-                  reset()
+                reset()
               })
           })
       })
@@ -96,26 +97,26 @@ export const Inputsigin = React.forwardRef((props, ref) => {
 
 
   return (
-    < >
+    <>
       <form >
         <FormControl>
-          <FormLabel color='white' htmlFor="email">Email</FormLabel>
+          <FormLabel color='white' htmlFor="email">Correo</FormLabel>
           <Input color='white' onChange={handleInputChange} value={formValues.email} id="email" name="email" type="email" />
         </FormControl>
         <FormControl>
-          <FormLabel color='white' htmlFor="phone">Telefono</FormLabel>
+          <FormLabel color='white' htmlFor="phone">Teléfono</FormLabel>
           <Input color='white' onChange={handleInputChange} value={formValues.phone} id="phone" name="phone" type="number" />
         </FormControl>
         <FormControl>
-          <FormLabel color='white' htmlFor="name">nombres</FormLabel>
+          <FormLabel color='white' htmlFor="name">Nombres</FormLabel>
           <Input color='white' onChange={handleInputChange} value={formValues.name} id="name" name="name" type="text" />
         </FormControl>
         <FormControl>
-          <FormLabel color='white' htmlFor="lastName">apellidos</FormLabel>
+          <FormLabel color='white' htmlFor="lastName">Apellidos</FormLabel>
           <Input color='white' onChange={handleInputChange} value={formValues.lastName} id="lastName" name="lastName" type="text" />
         </FormControl>
         <FormControl>
-          <FormLabel color='white' htmlFor="password">Password</FormLabel>
+          <FormLabel color='white' htmlFor="password">Constraseña</FormLabel>
           <InputGroup>
             <InputRightElement>
               <IconButton
@@ -140,20 +141,20 @@ export const Inputsigin = React.forwardRef((props, ref) => {
           </InputGroup>
         </FormControl>
         <br />
-        <Menu>
-          <MenuButton as={Button}>
-            tipo de cuenta
-          </MenuButton>
-          <MenuList>
-            <MenuItem>cliente</MenuItem>
-            <MenuItem>tecnico</MenuItem>
-          </MenuList>
-        </Menu>
+        <div style={{color: '#fff'}}>
+          <p>Tipo de cuenta:</p>
+          <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+            <Checkbox style={{ margin: '0 0.5rem' }} defaultIsChecked>Usuario</Checkbox>
+            <Checkbox defaultIsChecked>Técnico</Checkbox>
+            <Checkbox defaultIsChecked>Admin</Checkbox>
+          </div>
+        </div>
         <Stack spacing="6">
           <br />
-          <Button onClick={onClicksumit} color='mute'>create</Button>
+          <Button onClick={onClicksumit} color='mute'>Registrar</Button>
         </Stack >
       </form>
+      
     </>
   )
 })

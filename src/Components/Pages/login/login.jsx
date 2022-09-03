@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { NavLink } from 'react-router-dom';
-import { Logo } from './Logo'
 import { PasswordField } from './PasswordField'
 import { OAuthButtonGroup } from './OAuthButtonGroup';
 import SimpleNavBar from '../../Modules/SimpleNavBar';
@@ -22,7 +21,7 @@ import Footer from '../../Modules/Footer';
 
 export const LogIn = () => (
 
-  <>
+  <div style={{backgroundColor: '#ffffff'}}>
     <SimpleNavBar />
 
     <Container
@@ -107,7 +106,7 @@ export const LogIn = () => (
 
     <Footer />
 
-  </>
+  </div>
 )
 
 export default LogIn;

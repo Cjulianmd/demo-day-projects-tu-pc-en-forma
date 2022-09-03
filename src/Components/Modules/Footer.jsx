@@ -130,7 +130,7 @@ function Footer() {
         </section>
 
         <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-          © 2022 Copyright:
+          © 2022 Copyright
         </div>
 
       </footer>
