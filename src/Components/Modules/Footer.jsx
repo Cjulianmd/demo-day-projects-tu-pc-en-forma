@@ -2,7 +2,6 @@
 
 
 import React from 'react';
-import { MainContainer } from '../../Styles/StylesSebastian';
 import '../../Styles/StylesSebastian.css'
 import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin, BsGithub, BsTelephone, BsWifi } from 'react-icons/bs';
 import { BiMap } from 'react-icons/bi';
@@ -14,9 +13,9 @@ function Footer() {
 
   return (
 
-    <MainContainer>
+    <>
 
-      <footer className="footer-background text-center fixed-bottom text-lg-start">
+      <footer style={{width: '100%', margin: '0'}} className="footer-background text-center text-lg-start">
 
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -136,7 +135,7 @@ function Footer() {
 
       </footer>
 
-    </MainContainer>
+    </>
 
   )
 

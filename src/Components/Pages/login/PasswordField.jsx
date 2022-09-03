@@ -114,7 +114,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
           </InputGroup>
           <br />
           <Stack spacing="6">
-            <Button onClick={onClicksumit} color='mute' >Sign in</Button>
+            <Button onClick={onClicksumit} color='mute' >Inicia Sesion</Button>
           </Stack>
         </FormControl>
       </form>
