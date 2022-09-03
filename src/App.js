@@ -6,11 +6,12 @@ import AppRoutes from './Routes/AppRoutes';
 import { ToastContainer, Zoom } from 'react-toastify';
 import Store from './Redux/Store/Store';
 import 'react-toastify/dist/ReactToastify.css';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
 
   return (
-
+    <ChakraProvider>
     <Provider store={Store}>
       <AppRoutes />
       <ToastContainer
@@ -25,7 +26,7 @@ function App() {
         pauseOnHover
         transition={Zoom} />
     </Provider>
-
+  </ChakraProvider>
   )
 
 }
