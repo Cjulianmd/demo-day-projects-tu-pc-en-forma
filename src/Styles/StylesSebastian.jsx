@@ -20,7 +20,7 @@ export const HelperContainer = styled.div`
 `;
 
 export const LandingImg = styled.img`
-  width: 35%;
+  width: 4%;
   
 `;
 

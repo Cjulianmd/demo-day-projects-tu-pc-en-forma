@@ -4,3 +4,12 @@
   background-color: #675cb0;
   color: #fff;
 }
+
+.nabvar-background {
+  background-color: #675cb0;
+  color: #fff !important;
+}
+
+.hyperlink {
+  cursor: pointer;
+}
