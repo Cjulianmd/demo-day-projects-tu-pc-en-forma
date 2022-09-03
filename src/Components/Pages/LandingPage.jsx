@@ -27,6 +27,8 @@ function LandingPage() {
 
             <TestimoniesContainer>
 
+              <img style={{width: '20%'}} src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" alt="Logo de Marca" />
+
               <LandingCard>
 
                 <h2>Tu PC en Forma.</h2>
@@ -51,7 +53,7 @@ function LandingPage() {
             <TestimoniesContainer>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" alt="Mantenimiento Preventivo" />
                 <PolaroidContainer>
                   <h2>Mantenimiento preventivo</h2>
                   <p>
@@ -62,7 +64,7 @@ function LandingPage() {
               </Polaroid>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" alt="Mantenimiento Correctivo" />
                 <PolaroidContainer>
                   <h2>Mantenimiento correctivo</h2>
                   <p>
@@ -73,7 +75,7 @@ function LandingPage() {
               </Polaroid>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662235035/Demoday/Software_rsm8d3.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662235035/Demoday/Software_rsm8d3.jpg" alt="Actualización Software" />
                 <PolaroidContainer>
                   <h2>Actualización de software</h2>
                   <p>
@@ -94,7 +96,7 @@ function LandingPage() {
             <TestimoniesContainer>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232269/Demoday/Contador_igw7zk.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232269/Demoday/Contador_igw7zk.jpg" alt="Testimonio Juan" />
                 <PolaroidContainer>
                   <h2>Juan</h2>
                   <h3>Contador</h3>
@@ -105,7 +107,7 @@ function LandingPage() {
               </Polaroid>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232185/Demoday/Arquitecta_lwqs45.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232185/Demoday/Arquitecta_lwqs45.jpg" alt="Testimonio Isabel" />
                 <PolaroidContainer>
                   <h2>Isabel</h2>
                   <h3>Arquitecta</h3>
@@ -116,7 +118,7 @@ function LandingPage() {
               </Polaroid>
 
               <Polaroid>
-                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232707/Demoday/Dise%C3%B1adora_hqcna4.jpg" />
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662232707/Demoday/Dise%C3%B1adora_hqcna4.jpg" alt="Testimonio Cindy" />
                 <PolaroidContainer>
                   <h2>Cindy</h2>
                   <h3>Ilustradora</h3>
