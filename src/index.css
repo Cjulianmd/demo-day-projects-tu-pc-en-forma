@@ -1,5 +1,6 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import '~mdb-ui-kit/css/mdb.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
 
 body {
