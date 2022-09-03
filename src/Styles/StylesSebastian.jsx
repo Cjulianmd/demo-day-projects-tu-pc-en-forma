@@ -34,8 +34,13 @@ export const LandingContainer = styled.div`
 export const LandingSections = styled.div`
   width: 90vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0.5rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
 `;
 
 export const LandingCard = styled.div`
@@ -48,7 +53,7 @@ export const LandingCard = styled.div`
 `;
 
 export const TestimoniesContainer = styled.div`
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
@@ -58,7 +63,7 @@ export const TestimoniesContainer = styled.div`
 `;
 
 export const Polaroid = styled.div`
-  width: 50%;
+  width: 60%;
   background-color: #9f90ea;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
