@@ -3,6 +3,10 @@
 
 import React from 'react';
 import { MainContainer } from '../../Styles/StylesSebastian';
+import '../../Styles/StylesSebastian.css'
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin, BsGithub, BsTelephone } from 'react-icons/bs';
+import { BiMap } from 'react-icons/bi';
+
 
 function Footer() {
 
@@ -10,75 +14,75 @@ function Footer() {
 
     <MainContainer>
 
-      <footer class="text-center text-lg-start bg-light text-muted">
-        
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          
-          <div class="me-5 d-none d-lg-block">
+      <footer className="footer-background text-center fixed-bottom text-lg-start">
+
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+          <div className="me-5 d-none d-lg-block">
             <span>Conéctate con nosotros:</span>
           </div>
-          
 
-          <div>
-            <a href="https://www.facebook.com/profile.php?id=100071024058004" class="me-4 text-reset">
-              <i class="fab fa-facebook-f"></i>
+
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <a href="https://www.facebook.com/profile.php?id=100071024058004" className="me-4 text-reset">
+              <BsFacebook />
             </a>
-            <a href="https://twitter.com/geek_colombia" class="me-4 text-reset">
-              <i class="fab fa-twitter"></i>
+            <a href="https://twitter.com/geek_colombia" className="me-4 text-reset">
+              <BsTwitter />
             </a>
-            <a href="https://www.instagram.com/laacademiageek/?hl=es" class="me-4 text-reset">
-              <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/laacademiageek/?hl=es" className="me-4 text-reset">
+              <BsInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/academia-geek-bootcamp/?originalSubdomain=co" class="me-4 text-reset">
-              <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/company/academia-geek-bootcamp/?originalSubdomain=co" className="me-4 text-reset">
+              <BsLinkedin />
             </a>
-            <a href="https://github.com/academia-geek" class="me-4 text-reset">
-              <i class="fab fa-github"></i>
+            <a href="https://github.com/academia-geek" className="me-4 text-reset">
+              <BsGithub />
             </a>
           </div>
 
         </section>
 
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
+        <section className="">
+          <div className="container text-center text-md-start mt-5">
 
-            <div class="row mt-3">
+            <div className="row mt-3">
 
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class="fas fa-gem me-3"></i>Tu PC en Forma
+                <h6 className="text-uppercase fw-bold mb-4">
+                  Tu PC en Forma
                 </h6>
                 <p>
                   Somos tu mejor aliado a la hora de tener tu equipo de cómputo en forma para afrontar los mejores retos y puedas ganar por goleada.
                 </p>
               </div>
 
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                <h6 class="text-uppercase fw-bold mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">
                   Servicios
                 </h6>
                 <p>
-                  <a href="#!" class="text-reset">Mantenimiento preventivo</a>
+                  <a className="text-reset">Mantenimiento preventivo</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Mantenimiento correctivo</a>
+                  <a className="text-reset">Mantenimiento correctivo</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Actualización de software</a>
+                  <a className="text-reset">Actualización de software</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Compra de hardware</a>
+                  <a className="text-reset">Compra de hardware</a>
                 </p>
               </div>
 
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
-                <h6 class="text-uppercase fw-bold mb-4">Contáctanos</h6>
-                <p><i class="fas fa-home me-3"></i> Medellín, Antioquia, Colombia - Bogotá, Cundinamarca, Colombia</p>
-                <p><i class="fas fa-phone me-3"></i> (604) 4480374 </p>
-                <p><i class="fas fa-print me-3"></i> (57) 3207610176 </p>
+                <h6 className="text-uppercase fw-bold mb-4">Contáctanos</h6>
+                <p><BiMap /> Medellín, Colombia - Bogotá, Colombia</p>
+                <p><BsTelephone /> (604) 4480374 </p>
+                <p><BsTelephone /> (57) 3207610176 </p>
               </div>
 
             </div>
@@ -86,7 +90,7 @@ function Footer() {
           </div>
         </section>
 
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
           © 2022 Copyright:
         </div>
 
