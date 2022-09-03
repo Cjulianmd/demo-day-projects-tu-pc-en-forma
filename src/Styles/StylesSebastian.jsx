@@ -40,6 +40,7 @@ export const LandingSections = styled.div`
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    color: #2f2c79;
   }
 `;
 
@@ -50,6 +51,20 @@ export const LandingCard = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0.5rem auto;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    color: #2f2c79;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+  }
 `;
 
 export const TestimoniesContainer = styled.div`
@@ -84,10 +99,33 @@ export const Polaroid = styled.div`
 
   p {
     font-size: 1rem;
+    text-align: justify;
+    text-justify: inter-word;
   }
 `;
 
 export const PolaroidContainer = styled.div`
   text-align: center;
-  padding: 10px 20px;
+  padding: 1.5rem 1rem;
+`;
+
+export const Button = styled.button`
+  width: 50%;
+  padding: 3px 2px;
+  margin: 1rem auto;
+  justify-conent: center;
+  align-items: center;
+  background-color: #2f2c79;
+  border: 1px solid #2f2c79;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 `;

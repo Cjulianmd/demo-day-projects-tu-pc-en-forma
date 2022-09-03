@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
+import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import UnloggedNavBar from '../Modules/UnloggedNavBar';
 
@@ -20,6 +20,72 @@ function LandingPage() {
         <UnloggedNavBar />
 
         <HelperContainer>
+
+          <LandingSections>
+
+            <h1>Quiénes somos.</h1>
+
+            <TestimoniesContainer>
+
+              <LandingCard>
+
+                <h2>Tu PC en Forma.</h2>
+
+                <p>
+                  Tu PC en Forma es un aplicativo que busca conectar a los usuarios de equipos de cómputo con un completo ecosistema de asesoramiento en mantenimientos, tanto en lo referente a software como a hadware; actualización de aplicaciones y licencias; y la consecuscón de los software más adecuados para sus necesidades.
+                  <br />
+                  <br />
+                  La principal propuesta de nuestro proyecto es la agilidad en el servicio de mantenimiento (entendiendo la premura del usuario y su necesidad para atender sus compromisos laborales o académicos). De acuerdo con esta necesidad, proponemos alcanzar la mayor proporción de los servicios de manera remota, sin perturbar las rutinas de los usuarios.
+                </p>
+
+              </LandingCard>
+
+            </TestimoniesContainer>
+
+          </LandingSections>
+
+          <LandingSections>
+
+            <h1>Nuestros servicios.</h1>
+
+            <TestimoniesContainer>
+
+              <Polaroid>
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" />
+                <PolaroidContainer>
+                  <h2>Mantenimiento preventivo</h2>
+                  <p>
+                    Realiza mantenimiento preventivo de tus equipos de cómputo. El mantemiento preventivo consiste en realizar escaneos especializados en búsqueda de jugadores indeseados al interior de tu equipo y la verificación de que las versiones de aplicaciones estén al día, listas para darlo todo en el partido de tus quehaceres.
+                  </p>
+                  <Button>Ver más</Button>
+                </PolaroidContainer>
+              </Polaroid>
+
+              <Polaroid>
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662233672/Demoday/Mantenimiento_wvadal.jpg" />
+                <PolaroidContainer>
+                  <h2>Mantenimiento correctivo</h2>
+                  <p>
+                    Realiza mantenimiento correctivo de tus equipos de cómputo. El mantemiento correctivo busca devolverle la vitaldiad a tu equipo. Esto cuando algún componente de hardware o aplicación que fallen y requieran de una intervención que los rehabilite dejándolos listos para el partido para que lo dejen todo en tus quehaceres.
+                  </p>
+                  <Button>Ver más</Button>
+                </PolaroidContainer>
+              </Polaroid>
+
+              <Polaroid>
+                <img src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662235035/Demoday/Software_rsm8d3.jpg" />
+                <PolaroidContainer>
+                  <h2>Actualización de software</h2>
+                  <p>
+                    Manten tus aplicaciones actualziadas y con las más recientes licencias. Esto mantendrá tu equipo en forma y te permitirá ganar todos retos de trabajo y estudio, o todas las jugadas que necesites hacer en él. Estas se realizarán de manera ágil y remota, de manera que tu equipo no faltará a los compromisos.
+                  </p>
+                  <Button>Ver más</Button>
+                </PolaroidContainer>
+              </Polaroid>
+
+            </TestimoniesContainer>
+
+          </LandingSections>
 
           <LandingSections>
 
