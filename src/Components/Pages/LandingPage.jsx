@@ -13,15 +13,21 @@ function LandingPage() {
 
   return (
 
-    <MainContainer>
+    <>
 
-      <UnloggedNavBar />
+      <MainContainer>
 
-      <div>Hola</div>
+        <UnloggedNavBar />
+
+        <div>Hola</div>
+
+
+
+      </MainContainer>
 
       <Footer />
       
-    </MainContainer>
+    </>
 
   )
 
