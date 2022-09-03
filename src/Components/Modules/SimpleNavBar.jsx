@@ -1,37 +1,29 @@
 
 
 import React from 'react';
-import { MainContainer } from '../../Styles/StylesSebastian';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom';
+import { LandingImg, MainContainer } from '../../Styles/StylesSebastian';
 
 function SimpleNavBar() {
+
+  const navigation = useNavigate();
 
   return (
 
     <MainContainer>
 
-      <Navbar bg="dark" variant="dark">
+      <nav className="navbar navbar-light bg-light">
 
-        <Container>
+        <div className="container-fluid">
 
-          <Navbar.Brand href="#home">
+          <a className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>
+            <LandingImg src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
+            <small>Tu PC en Forma</small>
+          </a>
 
-            <img
-              alt="Logo de Marca"
-              src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
+        </div>
 
-            Tu PC en Forma
-
-          </Navbar.Brand>
-
-        </Container>
-
-      </Navbar>
+      </nav>
 
     </MainContainer>
 
