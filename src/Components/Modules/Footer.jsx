@@ -4,8 +4,10 @@
 import React from 'react';
 import { MainContainer } from '../../Styles/StylesSebastian';
 import '../../Styles/StylesSebastian.css'
-import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin, BsGithub, BsTelephone } from 'react-icons/bs';
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin, BsGithub, BsTelephone, BsWifi } from 'react-icons/bs';
 import { BiMap } from 'react-icons/bi';
+import { FaShieldVirus } from 'react-icons/fa';
+import { MdVpnKey } from 'react-icons/md';
 
 
 function Footer() {
@@ -24,19 +26,19 @@ function Footer() {
 
 
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <a href="https://www.facebook.com/profile.php?id=100071024058004" className="me-4 text-reset">
+            <a href="https://www.facebook.com/profile.php?id=100071024058004" target="_blank" className="me-4 text-reset">
               <BsFacebook />
             </a>
-            <a href="https://twitter.com/geek_colombia" className="me-4 text-reset">
+            <a href="https://twitter.com/geek_colombia" target="_blank" className="me-4 text-reset">
               <BsTwitter />
             </a>
-            <a href="https://www.instagram.com/laacademiageek/?hl=es" className="me-4 text-reset">
+            <a href="https://www.instagram.com/laacademiageek/?hl=es" target="_blank" className="me-4 text-reset">
               <BsInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/academia-geek-bootcamp/?originalSubdomain=co" className="me-4 text-reset">
+            <a href="https://www.linkedin.com/company/academia-geek-bootcamp/?originalSubdomain=co" target="_blank" className="me-4 text-reset">
               <BsLinkedin />
             </a>
-            <a href="https://github.com/academia-geek" className="me-4 text-reset">
+            <a href="https://github.com/academia-geek" target="_blank" className="me-4 text-reset">
               <BsGithub />
             </a>
           </div>
@@ -75,6 +77,44 @@ function Footer() {
                 <p>
                   <a className="text-reset">Compra de hardware</a>
                 </p>
+              </div>
+
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Herramientas útiles
+                </h6>
+                <p>
+                  <a
+                    href="https://www.f-secure.com/es/home/free-tools/online-scanner"
+                    target="_blank"
+                    class="text-reset"
+                  >
+                    <FaShieldVirus />
+                    Escanea tu equipo
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://www.nperf.com/en/"
+                    target="_blank"
+                    class="text-reset"
+                  >
+                    <BsWifi />
+                    Escanea tu velocidad
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://chrome.google.com/webstore/detail/free-vpn-zenmate-best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=es"
+                    target="_blank"
+                    class="text-reset"
+                  >
+                    <MdVpnKey />
+                    Navega seguro
+                  </a>
+                </p>
+
               </div>
 
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
