@@ -21,7 +21,7 @@ function SimpleNavBar() {
             <small>Tu PC en Forma</small>
           </a>
 
-          <span className="navbar-text">
+          <span style={{marginRight: '3rem'}} className="navbar-text">
             <ul style={{ gap: '2rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item hyperlink2"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/landing")}>Atrás</h6></li>
             </ul>

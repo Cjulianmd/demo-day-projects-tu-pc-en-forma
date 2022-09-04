@@ -132,7 +132,7 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  width: 60%;
+  width: 100%;
   margin: 0.5rem auto;
   padding: 0.5rem 1rem;
   border-radius: 15px;
