@@ -28,6 +28,7 @@ import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { useForm } from '../../../Hooks/useForm';
 import { getAuth } from "firebase/auth";
 import { db } from '../../../FireBase/JulianFirebase';
+import { useNavigate } from 'react-router-dom';
 
 export const Inputsigin = React.forwardRef((props, ref) => {
   const { isOpen, onToggle } = useDisclosure()
@@ -40,6 +41,8 @@ export const Inputsigin = React.forwardRef((props, ref) => {
     email: '',
     password: '',
   })
+
+  const navigation = useNavigate();
 
   const onClickReveal = () => {
 
@@ -72,7 +75,8 @@ export const Inputsigin = React.forwardRef((props, ref) => {
                   email: formValues.email,
                 })
                   .then(() => {
-                    toast.success('Registro exitoso.')
+                    toast.success('Registro exitoso.');
+                    navigation("/login");
                   })
                 reset()
               })
