@@ -78,16 +78,16 @@ function Footer() {
                 </p>
               </div>
 
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                <h6 class="text-uppercase fw-bold mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">
                   Herramientas útiles
                 </h6>
                 <p>
                   <a
                     href="https://www.f-secure.com/es/home/free-tools/online-scanner"
                     target="_blank"
-                    class="text-reset"
+                    className="text-reset"
                   >
                     <FaShieldVirus />
                     Escanea tu equipo
@@ -97,7 +97,7 @@ function Footer() {
                   <a
                     href="https://www.nperf.com/en/"
                     target="_blank"
-                    class="text-reset"
+                    className="text-reset"
                   >
                     <BsWifi />
                     Escanea tu velocidad
@@ -107,7 +107,7 @@ function Footer() {
                   <a
                     href="https://chrome.google.com/webstore/detail/free-vpn-zenmate-best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=es"
                     target="_blank"
-                    class="text-reset"
+                    className="text-reset"
                   >
                     <MdVpnKey />
                     Navega seguro

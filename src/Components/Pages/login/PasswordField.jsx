@@ -40,7 +40,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
     signInWithEmailAndPassword(auth, formValues.email, formValues.password)
     .then((userCredential) => {
        if (!userCredential.user.emailVerified) {
-      alert('Your account has not been verified. Please verify your account before attempting to LogIn.')
+      toast.warm('Tu cuenta no ha sido verificada. Por favor, verifica tu correo antes de iniciar sesión.')
     } else {
       getDoc(doc(db, 'Clientes', auth.currentUser.uid))
         .then(doc => {
@@ -48,22 +48,22 @@ export const PasswordField = React.forwardRef((props, ref) => {
             let userData = doc.data();
             let logInaction = Object.assign({}, actionLogIn);
             logInaction.payload = {
-            email: formValues.email,
+            id: auth.currentUser.uid,
+            email: userData.email,
             apellidos: userData.apellidos,
             phone: userData.phone, 
             isLogged: true };
             dispatch(logInaction);
+            toast.success('Bienvenido.')
             navigation("/home");
           } else {
-            toast.error('Please call the admin because your LogIn has an error.')
+            toast.error('Por favor, contacta al administrador del sitio. Ha ocurrido un error.')
           }
         })
         .catch((error) => {
           const errorCode = error.code;
-          console.log(errorCode)
           const errorMessage = error.message;
-          console.log(errorMessage)
-          alert('email o contraseña incorrectos')
+          toast.error('Correo o contraseña incorrectas')
         });
     }
     })

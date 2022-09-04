@@ -28,6 +28,7 @@ import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { useForm } from '../../../Hooks/useForm';
 import { getAuth } from "firebase/auth";
 import { db } from '../../../FireBase/JulianFirebase';
+import { useNavigate } from 'react-router-dom';
 
 export const Inputsigin = React.forwardRef((props, ref) => {
   const { isOpen, onToggle } = useDisclosure()
@@ -40,6 +41,8 @@ export const Inputsigin = React.forwardRef((props, ref) => {
     email: '',
     password: '',
   })
+
+  const navigation = useNavigate();
 
   const onClickReveal = () => {
 
@@ -65,14 +68,15 @@ export const Inputsigin = React.forwardRef((props, ref) => {
           .then(() => {
             sendEmailVerification(auth.currentUser)
               .then(() => {
-                toast.success('Email verification have been sent.')
+                toast.success('Correo de verificación enviado.')
                 setDoc(doc(db, 'Clientes', auth.currentUser.uid), {
                   apellidos: formValues.lastName,
                   phone: formValues.phone,
                   email: formValues.email,
                 })
                   .then(() => {
-                    toast.success('SignIn successful.')
+                    toast.success('Registro exitoso.');
+                    navigation("/login");
                   })
                 reset()
               })
@@ -81,16 +85,13 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         reset()
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
         const errorMessage = error.message;
-        console.log(errorMessage)
-        alert(errorCode)
+        toast.error(errorCode)
         // ..
       });
   }

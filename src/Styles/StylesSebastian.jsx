@@ -101,6 +101,7 @@ export const Polaroid = styled.div`
     font-size: 1rem;
     text-align: justify;
     text-justify: inter-word;
+    margin: 1rem auto;
   }
 `;
 
@@ -128,4 +129,12 @@ export const Button = styled.button`
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  color: black;
 `;
