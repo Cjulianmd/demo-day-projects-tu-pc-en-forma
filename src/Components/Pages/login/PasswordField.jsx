@@ -48,7 +48,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
             let userData = doc.data();
             let logInaction = Object.assign({}, actionLogIn);
             logInaction.payload = {
-            email: formValues.email,
+            id: auth.currentUser.uid,
+            email: userData.email,
             apellidos: userData.apellidos,
             phone: userData.phone, 
             isLogged: true };

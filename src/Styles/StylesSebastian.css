@@ -18,3 +18,8 @@
 .card-img {
   border-radius: 10%;
 }
+
+.modal-content {
+  background-color: #675cb0;
+  color: #fff
+}

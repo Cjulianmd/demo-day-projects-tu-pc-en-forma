@@ -2,10 +2,12 @@
 
 
 let defaultUser = {
-  email: '',
   name: '',
-  faculty: '',
-  isLogged: true
+  email: '',
+  apellidos: '',
+  phone: '',
+  id: '',
+  isLogged: false
 }
 
 

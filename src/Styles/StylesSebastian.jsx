@@ -130,3 +130,11 @@ export const Button = styled.button`
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 `;
+
+export const Input = styled.input`
+  width: 60%;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  color: black;
+`;
