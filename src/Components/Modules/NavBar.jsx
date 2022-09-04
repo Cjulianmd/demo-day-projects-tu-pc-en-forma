@@ -6,17 +6,20 @@ import { Input, LandingImg, MainContainer } from '../../Styles/StylesSebastian';
 import { IoMdMenu } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 import '../../Styles/StylesSebastian.css';
-import { useSelector } from 'react-redux';
-import {toast} from 'react-toastify';
+import { getAuth, signOut } from 'firebase/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../FireBase/JulianFirebase';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { actionLogIn, actionLogOut } from '../../Redux/Actions/Actions';
 
 function NavBar() {
 
   const navigation = useNavigate();
   const user = useSelector(state => state.userLogIn);
+  const dispatch = useDispatch();
 
   const [newUserInfo, setNewUserInfo] = useState({
     name: '',
@@ -41,10 +44,23 @@ function NavBar() {
       apellidos: newUserInfo.apellidos,
       phone: newUserInfo.phone
     })
-    .then(() => {
-      toast.success('Información actualizada con éxito.');
-      setShow(false);
-    })
+      .then(() => {
+        toast.success('Información actualizada con éxito.');
+        let updateInfoAction = Object.assign({}, actionLogIn);
+        updateInfoAction.payload = { name: newUserInfo.name, apellidos: newUserInfo.apellidos, phone: newUserInfo.phone };
+        dispatch(updateInfoAction);
+        setShow(false);
+      })
+  }
+
+  const letLogout = () => {
+    signOut(getAuth())
+      .then(() => {
+        let logOutAction = Object.assign({}, actionLogOut);
+        dispatch(logOutAction);
+        toast.success('Cierre de sesión exitoso.')
+        navigation("/");
+      })
   }
 
 
@@ -55,8 +71,8 @@ function NavBar() {
       <nav className="navbar fixed-top navbar-expand-lg navbar-light nabvar-background">
 
         <div className="container-fluid">
-          <LandingImg onClick={() => navigation("/landing")} className="hyperlink" src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
-          <a style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>Tu PC en Forma</a>
+          <LandingImg onClick={() => navigation("/home")} className="hyperlink" src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
+          <a style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/home")}>Tu PC en Forma</a>
 
           <button
             className="navbar-toggler"
@@ -74,7 +90,7 @@ function NavBar() {
 
             <ul style={{ marginLeft: '3rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink" aria-current="page" onClick={() => navigation("/")} >Inicio</a>
+                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink" aria-current="page" onClick={() => navigation("/home")} >Inicio</a>
               </li>
               <li className="nav-item">
                 <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/preventive")} >Mantenimiento preventivo</a>
@@ -89,7 +105,7 @@ function NavBar() {
             <span style={{ marginRight: '3rem' }} className="navbar-text">
               <ul style={{ gap: '2rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={handleShow}>Usuario</h6></li>
-                <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/landing")}>Salir</h6></li>
+                <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={letLogout}>Salir</h6></li>
               </ul>
             </span>
           </div>
