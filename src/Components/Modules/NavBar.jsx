@@ -15,7 +15,7 @@ function NavBar() {
 
     <MainContainer>
 
-      <nav className="navbar navbar-expand-lg navbar-light nabvar-background">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light nabvar-background">
 
         <div className="container-fluid">
           <LandingImg onClick={() => navigation("/landing")} className="hyperlink" src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
@@ -37,21 +37,21 @@ function NavBar() {
 
             <ul style={{ marginLeft: '3rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link active" aria-current="page" onClick={() => navigation("/")} >Inicio</a>
+                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink" aria-current="page" onClick={() => navigation("/")} >Inicio</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link" onClick={() => navigation("/preventive")} >Mantenimiento preventivo</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/preventive")} >Mantenimiento preventivo</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link" onClick={() => navigation("/corrective")} >Mantenimiento correctivo</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/corrective")} >Mantenimiento correctivo</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link" onClick={() => navigation("/software")} >Actualización de software</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/software")} >Actualización de software</a>
               </li>
             </ul>
-            <span className="navbar-text">
-              <ul style={{ gap: '2rem', marginRight: '2rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/login")}>Salir</h6></li>
+            <span style={{marginRight: '3rem'}} className="navbar-text">
+              <ul style={{ gap: '2rem'}} className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/landing")}>Salir</h6></li>
               </ul>
             </span>
           </div>

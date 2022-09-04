@@ -38,7 +38,7 @@ function UnloggedNavBar() {
 
             </ul>
 
-            <span className="navbar-text">
+            <span style={{marginRight: '3rem'}} className="navbar-text">
               <ul style={{ gap: '2rem', marginRight: '2rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/login")}>Comienza</h6></li>
                 <li className="nav-item hyperlink"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/signin")}>Regístrate</h6></li>
