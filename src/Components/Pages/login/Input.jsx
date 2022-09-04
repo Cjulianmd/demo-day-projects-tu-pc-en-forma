@@ -72,7 +72,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
                   email: formValues.email,
                 })
                   .then(() => {
-                    toast.success('SignIn successful.')
+                    toast.success('Registro exitoso.')
                   })
                 reset()
               })
@@ -81,16 +81,13 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         reset()
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
         const errorMessage = error.message;
-        console.log(errorMessage)
-        alert(errorCode)
+        toast.error(errorCode)
         // ..
       });
   }
