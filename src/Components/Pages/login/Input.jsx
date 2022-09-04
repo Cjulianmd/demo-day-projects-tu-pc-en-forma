@@ -68,7 +68,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
           .then(() => {
             sendEmailVerification(auth.currentUser)
               .then(() => {
-                toast.success('Email verification have been sent.')
+                toast.success('Correo de verificación enviado.')
                 setDoc(doc(db, 'Clientes', auth.currentUser.uid), {
                   apellidos: formValues.lastName,
                   phone: formValues.phone,
