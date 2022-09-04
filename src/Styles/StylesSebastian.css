@@ -14,3 +14,7 @@
 .hyperlink {
   cursor: pointer;
 }
+
+.card-img {
+  border-radius: 10%;
+}

@@ -101,6 +101,7 @@ export const Polaroid = styled.div`
     font-size: 1rem;
     text-align: justify;
     text-justify: inter-word;
+    margin: 1rem auto;
   }
 `;
 

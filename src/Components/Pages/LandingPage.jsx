@@ -59,7 +59,6 @@ function LandingPage() {
                   <p>
                     Realiza mantenimiento preventivo de tus equipos de cómputo. El mantemiento preventivo consiste en realizar escaneos especializados en búsqueda de jugadores indeseados al interior de tu equipo y la verificación de que las versiones de aplicaciones estén al día, listas para darlo todo en el partido de tus quehaceres.
                   </p>
-                  <Button>Ver más</Button>
                 </PolaroidContainer>
               </Polaroid>
 
@@ -70,7 +69,6 @@ function LandingPage() {
                   <p>
                     Realiza mantenimiento correctivo de tus equipos de cómputo. El mantemiento correctivo busca devolverle la vitaldiad a tu equipo. Esto cuando algún componente de hardware o aplicación que fallen y requieran de una intervención que los rehabilite dejándolos listos para el partido para que lo dejen todo en tus quehaceres.
                   </p>
-                  <Button>Ver más</Button>
                 </PolaroidContainer>
               </Polaroid>
 
@@ -81,7 +79,6 @@ function LandingPage() {
                   <p>
                     Manten tus aplicaciones actualziadas y con las más recientes licencias. Esto mantendrá tu equipo en forma y te permitirá ganar todos retos de trabajo y estudio, o todas las jugadas que necesites hacer en él. Estas se realizarán de manera ágil y remota, de manera que tu equipo no faltará a los compromisos.
                   </p>
-                  <Button>Ver más</Button>
                 </PolaroidContainer>
               </Polaroid>
 
