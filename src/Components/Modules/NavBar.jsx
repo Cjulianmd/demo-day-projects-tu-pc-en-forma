@@ -45,7 +45,7 @@ function NavBar() {
       phone: newUserInfo.phone
     })
       .then(() => {
-        toast.success('Información actualizada con éxito.');
+        toast.success('Información actualizada con éxito.', {className:"toast-message"});
         let updateInfoAction = Object.assign({}, actionLogIn);
         updateInfoAction.payload = { name: newUserInfo.name, apellidos: newUserInfo.apellidos, phone: newUserInfo.phone };
         dispatch(updateInfoAction);
@@ -58,7 +58,7 @@ function NavBar() {
       .then(() => {
         let logOutAction = Object.assign({}, actionLogOut);
         dispatch(logOutAction);
-        toast.success('Cierre de sesión exitoso.')
+        toast.success('Cierre de sesión exitoso.', {className:"toast-message"})
         navigation("/");
       })
   }
