@@ -33,7 +33,7 @@ function UnloggedNavBar() {
 
             <ul style={{ marginLeft: '3rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink" aria-current="page" onClick={() => navigation("/landing")}>Inicio</a>
+                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink2" aria-current="page" onClick={() => navigation("/landing")}>Inicio</a>
               </li>
 
             </ul>

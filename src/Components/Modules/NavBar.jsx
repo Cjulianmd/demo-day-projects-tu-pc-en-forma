@@ -90,16 +90,16 @@ function NavBar() {
 
             <ul style={{ marginLeft: '3rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink" aria-current="page" onClick={() => navigation("/home")} >Inicio</a>
+                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink2" aria-current="page" onClick={() => navigation("/home")} >Inicio</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/preventive")} >Mantenimiento preventivo</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink2" onClick={() => navigation("/preventive")} >Mantenimiento preventivo</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/corrective")} >Mantenimiento correctivo</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink2" onClick={() => navigation("/corrective")} >Mantenimiento correctivo</a>
               </li>
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link hyperlink" onClick={() => navigation("/software")} >Actualización de software</a>
+                <a style={{ color: '#ffffff' }} className="nav-link hyperlink2" onClick={() => navigation("/software")} >Actualización de software</a>
               </li>
             </ul>
             <span style={{ marginRight: '3rem' }} className="navbar-text">
