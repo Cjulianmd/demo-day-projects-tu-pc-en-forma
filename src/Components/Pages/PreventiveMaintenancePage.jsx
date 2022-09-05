@@ -2,11 +2,15 @@
 
 
 import React from 'react';
-import { HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceImg } from '../../Styles/StylesSebastian';
+import { useSelector } from 'react-redux';
+import { HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import NavBar from '../Modules/NavBar';
+import VideoPlayer from '../Modules/VideoPlayer';
 
 function PreventiveMaintenancePage() {
+
+  const videoP = useSelector(state => state.ManVideos.preventivo)
 
   return (
 
@@ -85,6 +89,16 @@ function PreventiveMaintenancePage() {
 
             </LandingCard>
 
+            <VideoContainer>
+              <VideoPlayer video={videoP} />
+            </VideoContainer>
+
+
+          </LandingSections>
+
+          <LandingSections>
+
+            
           </LandingSections>
 
         </HelperContainer>
