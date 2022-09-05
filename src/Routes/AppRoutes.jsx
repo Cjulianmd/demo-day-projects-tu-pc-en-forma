@@ -12,11 +12,11 @@ import ServicesHomePage from '../Components/Pages/ServicesHomePage';
 import PreventiveMaintenancePage from '../Components/Pages/PreventiveMaintenancePage';
 import CorrectiveMaintenancePage from '../Components/Pages/CorrectiveMaintenancePage';
 import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
-
+import Aceptwork from '../Components/Pages/aceptwoek';
 function AppRoutes() {
 
-  const logged = useSelector(state => state.userLogIn.isLogged);
-
+  //const logged = useSelector(state => state.userLogIn.isLogged);
+  const logged = true;
   return (
 
     <BrowserRouter>
@@ -29,6 +29,7 @@ function AppRoutes() {
         <Route path="/preventive" element={<PrivateRoutes auth={logged}> <PreventiveMaintenancePage /> </PrivateRoutes>} />
         <Route path="/corrective" element={<PrivateRoutes auth={logged}> <CorrectiveMaintenancePage /> </PrivateRoutes>} />
         <Route path="/software" element={<PrivateRoutes auth={logged}> <SoftwareUpdatePage /> </PrivateRoutes>} />
+        <Route path="/aceptwork" element={<PrivateRoutes auth={logged}> <Aceptwork /> </PrivateRoutes>} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
