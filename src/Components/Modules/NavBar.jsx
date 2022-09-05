@@ -69,8 +69,8 @@ function NavBar() {
         deleteUser(getAuth().currentUser)
           .then(() => {
             toast.success('Usuario eliminado exitosamente.')
-            handleClose();
             navigation("/");
+            handleClose();
           })
           .catch((error) => toast.error(`Ocurrió un error. ${error}. Por favor, contacta al administrador.`))
       })
