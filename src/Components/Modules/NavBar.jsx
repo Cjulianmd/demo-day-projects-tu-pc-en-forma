@@ -63,8 +63,8 @@ function NavBar() {
       })
   }
 
-  const letDeleteUser = () => {  //TODO usar confirmación al estilo github
-    deleteDoc(doc(db, 'Clientes', user.id))
+  const letDeleteUser = () => {
+      deleteDoc(doc(db, 'Clientes', user.id))
       .then(() => {
         deleteUser(getAuth().currentUser)
           .then(() => {
