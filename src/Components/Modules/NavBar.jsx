@@ -63,8 +63,8 @@ function NavBar() {
       })
   }
 
-  const letDeleteUser = () => {  //TODO usar confirmación al estilo github - errores
-    deleteDoc(doc(db, 'Clientes', user.id))
+  const letDeleteUser = () => {
+      deleteDoc(doc(db, 'Clientes', user.id))
       .then(() => {
         deleteUser(getAuth().currentUser)
           .then(() => {
@@ -72,7 +72,9 @@ function NavBar() {
             navigation("/");
             handleClose();
           })
+          .catch((error) => toast.error(`Ocurrió un error. ${error}. Por favor, contacta al administrador.`))
       })
+      .catch((error) => toast.error(`Ocurrió un error. ${error}. Por favor, contacta al administrador.`))
 
   }
 

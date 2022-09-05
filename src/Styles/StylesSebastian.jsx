@@ -138,3 +138,41 @@ export const Input = styled.input`
   border-radius: 15px;
   color: black;
 `;
+
+export const MaintenanceImg = styled.img`
+  width: 50%
+  border-radius: 15px;
+`;
+
+export const VideoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+`;
+
+export const MaintenanceCard = styled.div`
+  width: 80%;
+  background-color: #9f90ea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto;
+  padding: 1rem 2.5rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+    color: #ffffff;
+  }
+`;

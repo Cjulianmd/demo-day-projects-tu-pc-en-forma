@@ -10,6 +10,12 @@ let defaultUser = {
   isLogged: false
 }
 
+let defaultVideos = {
+  preventivo: '',
+  correctivo: '',
+  software: ''
+}
+
 
 
 const logInReducer = (state = defaultUser, action) => {
@@ -24,5 +30,14 @@ const logInReducer = (state = defaultUser, action) => {
   }
 }
 
+const videosReducer = (state = defaultVideos, action) => {
+  switch (action.type) {
+    case '@video/get':
+      return action.payload;
+    default:
+      return state;
+  }
+}
 
-export { logInReducer };
+
+export { logInReducer, videosReducer };

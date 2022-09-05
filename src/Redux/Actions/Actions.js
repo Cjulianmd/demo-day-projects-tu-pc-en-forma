@@ -11,5 +11,10 @@ const actionLogOut = {
   payload: {}
 }
 
+const getVideos = {
+  type: '@video/get',
+  payload: {}
+}
 
-export {actionLogOut, actionLogIn};
+
+export { actionLogOut, actionLogIn, getVideos };
