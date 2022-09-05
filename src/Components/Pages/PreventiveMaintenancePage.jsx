@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+import { Button, HelperContainer, Input, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import NavBar from '../Modules/NavBar';
 import VideoPlayer from '../Modules/VideoPlayer';
@@ -98,7 +98,16 @@ function PreventiveMaintenancePage() {
 
           <LandingSections>
 
-            
+            <MaintenanceCard>
+
+              <h2>¡Agenda tu mantenimiento con nosotros!</h2>
+
+              <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
+
+              <Button>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+
+            </MaintenanceCard>
+
           </LandingSections>
 
         </HelperContainer>

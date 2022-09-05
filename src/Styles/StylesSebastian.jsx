@@ -159,12 +159,13 @@ export const MaintenanceCard = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0.5rem auto;
+  padding: 1rem 2.5rem;
 
   h2 {
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0.5rem 0;
-    color: #2f2c79;
+    color: #ffffff;
   }
 
   p {
@@ -172,5 +173,6 @@ export const MaintenanceCard = styled.div`
     padding: 0.5rem 0;
     text-align: justify;
     text-justify: inter-word;
+    color: #ffffff;
   }
 `;
