@@ -138,3 +138,8 @@ export const Input = styled.input`
   border-radius: 15px;
   color: black;
 `;
+
+export const MaintenanceImg = styled.img`
+  width: 50%
+  border-radius: 15px;
+`;
