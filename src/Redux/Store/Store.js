@@ -2,7 +2,7 @@
 
 
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { logInReducer } from '../Reducers/Reducers';
+import { logInReducer, videosReducer } from '../Reducers/Reducers';
 
 
 let Store;
@@ -13,6 +13,7 @@ Store = createStore(
   combineReducers(
     {
       userLogIn: logInReducer,
+      ManVideos: videosReducer
     }
   ), r(applyMiddleware())
 )
