@@ -1,7 +1,7 @@
 //! Julián
 
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import  Navbar  from '../Modules/NavBar';
 import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
@@ -13,73 +13,75 @@ function CorrectiveMaintenancePage() {
     <>
     <MainContainer>
 
-      <Navbar />
+      <Navbar/>
 
       <HelperContainer>
 
         <LandingSections>
 
-          <h1>Mantenimientos preventivos.</h1>
+          <h1>Mantenimientos correctivos.</h1>
 
           <LandingCard>
 
-            <MaintenanceImg style={{ margin: '2rem auto' }} src="https://res.cloudinary.com/felixces/image/upload/v1662406790/imagenes%20demo/homepage/correctivo_qghves.jpg" alt="Mantenimientos Imagen" />
+            <MaintenanceImg style={{ margin: '2rem auto' }} src="https://res.cloudinary.com/felixces/image/upload/v1662408204/imagenes%20demo/homepage/correctivo_bff1nm.jpg" alt="Mantenimientos Imagen" />
 
-            <h2>¿Qué incluye un buen mantenimiento?</h2>
+            <h2>¿Qué es el mantenimiento correctivo de computadores?</h2>
             <p>
 
-              <b>1. Verificación de funcionamiento:</b> antes de realizar cualquier acción se debe verificar que el equipo funcione bien y tomar nota de comportamientos extraños o desconfiguraciones en el sistema operativo.
+              <b>1. ¿ De que se trata ?</b> Se trata del conjunto de tareas técnicas, realizadas para corregir fallas en un computador. Normalmente consisten en reparar o sustituir componentes defectuosos, que pueden ser de software o hardware.
 
               <br /><br />
 
-              <b>2. Limpieza física:</b> consiste en desarmar y limpiar de los componentes físicos (hardware) del equipo.
-              En el caso de los computadores de mesa se debe usar una sopladora para sacar el polvo y químicos especiales para limpiar las áreas delicadas. Con los computadores portátiles se deben cumplir tres etapas cuidadosamente:
+              <b>2. ¿ Que fallas hay?</b> En los casos donde la falla es física (que proviene del hardware) es común cambiar componentes como el disco duro o la memoria RAM.
 
+Y cuando la falla es lógica (que proviene del software) se acostumbra a re-instalar programas, eliminar antivirus o formatear.
+
+Pero todas estas acciones tienen en común que corrigen los errores del computador para restablecer su funcionamiento normal.
+          
               <br />
 
-              <ul style={{ marginLeft: '3rem' }}>
-                <li> Primero se debe desarmar el equipo y separar los componentes.</li>
-                <li> Segundo limpiar todas las partes con una brocha, lubricar el ventilador de la CPU y cambiar la crema disipadora.</li>
-                <li> Tercero, volver a ensamblar el equipo y hacer pruebas de funcionamiento.</li>
-              </ul>
-
-              <br />
-
-              <b>3. Limpieza lógica:</b> El último paso se divide en cuatro acciones: eliminar, actualizar, desinstalar e instalar.
-
-              <br />
-
-              <ul style={{ marginLeft: '3rem' }}>
-                <li>Eliminar virus si los hay, también los archivos temporales del sistema, vaciar papeleras de reciclaje y borrar historiales antiguos.</li>
-                <li>Actualizar antivirus, aplicaciones y programas como navegadores, reproductores, lectores de pdf, entre otros.</li>
-                <li>Desinstalar programas y aplicaciones sospechosas, obsoletas o innecesarias.</li>
-                <li>Instalar programas necesarios, en su mayoría son aplicaciones de seguridad como antimalware o cortafuegos, también puede ser algún programa que haya pedido el cliente.</li>
-              </ul>
+           
+            
             </p>
             <br />
 
-            <h2>Características de un mantenimiento preventivo</h2>
+            <h2>Mantenimiento correctivo de hardware</h2>
             <p>
-              El mantenimiento preventivo se diferencia de los demás en que:
+            Este mantenimiento se hace cuando el origen de la falla está en los componentes físicos (memoria RAM, disco duro, entre otros) del computador. Estos son algunos ejemplos:
               <br />
               <ul style={{ marginLeft: '3rem' }}>
-                <li>Previene daños: Este es su principal objetivo, al eliminar agentes dañinos y corregir desviaciones de funcionamiento se evitan gran cantidad de daños.</li>
-                <li>Aumenta la vida útil del computador: Al mantener el equipo en buenas condiciones y evitar situaciones de riesgo se garantiza la vida útil del equipo.</li>
-                <li>Es económico: Ya que el proceso está estandarizado y rara vez se necesitan repuestos.</li>
-                <li>Se realiza antes de que algo falle: El mantenimiento preventivo en cualquier área debe hacerse antes de que existan averías o fallas en los equipos. El objetivo principal es evitar que los equipos fallen y causen retrasos a sus usuarios.</li>
-                <li>Es rutinario: Las tareas a realizar durante este tipo de mantenimiento, están estipuladas mediante un protocolo y suelen ser bastante mecánicas.</li>
-                <li>Suele ser periódico y programado: Es ideal crear calendarios de mantenimiento preventivo y programar las fechas, herramientas y avisos necesarios. Esto evita que los equipos estén fuera de servicio por mucho tiempo y en momentos críticos.</li>
+                <li>Cambio de componentes como la fuente de poder o el disco duro.</li>
+                <li>Reconstrucción de carcasas o bisagras en caso de portátiles.</li>
+                <li>Reparación electrónica.</li>
+                
               </ul>
             </p>
 
             <br />
-            <h2>Beneficios del mantenimiento preventivo de computadores</h2>
+            <h2>Características del mantenimiento correctivo</h2>
             <p>
-              Realizar mantenimiento preventivo regularmente tiene algunos efectos buenos en los computadores:
+            Igual que el mantenimiento preventivo, este tipo de mantenimiento tiene algunos factores que lo caracterizan, como:
               <ul style={{ marginLeft: '3rem' }}>
-                <li>Evita el sobrecalentamiento: Al reemplazar la crema disipadora y las almohadillas térmicas se garantiza el buen funcionamiento del sistema de refrigeración y se previene el sobrecalentamiento.</li>
-                <li>Evita el deterioro de los ventiladores: Al lubricar los ventiladores evita que se averíen por fricción y que pierdan su centro.</li>
-                <li>Elimina agentes peligrosos: La limpieza física elimina grasa, sustancias salinas, migajas de comida y todo tipo de residuos dañinos.</li>
+                <li>No se programa en el tiempo.</li>
+                <li>Se realiza después del daño.</li>
+                <li>Casi siempre es más costoso que el mantenimiento preventivo.</li>
+                <li>Implica una pausa total o parcial de funcionamiento.</li>
+                <li>Toma más tiempo que el mantenimiento preventivo.</li>
+              </ul>
+            </p>
+            <h2>¿Cada cuánto se debe hacer mantenimiento correctivo al computador?​</h2>
+            <p>
+            Este tipo de mantenimiento no se programa en el tiempo, por el contrario, se trata de evitar, debido a esto no hay un tiempo establecido para realizarlo.
+           El mantenimiento correctivo se hace cuando el computador falla y es obligatorio.
+            </p>
+           
+            <h2>¿Cómo evitar los mantenimientos correctivos?​</h2>
+            <p>
+            Como mencionamos antes, lo ideal es evitar el mantenimiento correctivo el mayor tiempo posible. Aunque en algún momento será necesario pero hay algunas advertencias que puedes detectar y actuar para evitarlo, como:
+            <ul style={{ marginLeft: '3rem' }}>
+                <li>El sobrecalentamiento: si notas que tu computador se está calentando de más, llévalo a mantenimiento preventivo, esto te va a evitar una reparación más costosa a futuro.</li>
+                <li>Fallas repentinas: si el computador se reinicia solo, se demora mucho en encender o presenta comportamientos extraños, pídele a tu técnico de confianza que lo revise.</li>
+                <li>Avisos del antivirus: si tu antivirus te está diciendo que el equipo está en riesgo o que hay alguna amenaza que no ha podido eliminar, préstale atención y si es necesario pide soporte técnico.</li>
               </ul>
             </p>
 
