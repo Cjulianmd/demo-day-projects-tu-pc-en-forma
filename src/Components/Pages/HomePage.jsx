@@ -1,15 +1,36 @@
 //! Félix
 
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
 import NavBar from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import { useNavigate } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../FireBase/JulianFirebase';
+import { getVideos } from '../../Redux/Actions/Actions';
+import { useDispatch } from 'react-redux';
 
 function HomePage() {
 
   const navigation = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    getDoc(doc(db, 'Videos', 'videos'))
+      .then(doc => {
+        if (doc.exists) {
+          let videos = doc.data();
+          let getVideosAction = Object.assign({}, getVideos);
+          getVideosAction.payload = { preventivo: videos.preventivo, correctivo: videos.correctivo, software: videos.software }
+          dispatch(getVideosAction);
+        }
+      })
+
+
+
+  }, [dispatch]);
 
   return (
 
