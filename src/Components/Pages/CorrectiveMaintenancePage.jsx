@@ -6,9 +6,13 @@ import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, M
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function CorrectiveMaintenancePage() {
-  const videoC = useSelector(state => state.ManVideos.correctivo)
+
+  const videoC = useSelector(state => state.ManVideos.correctivo);
+  const navigation = useNavigate();
+
   return (
   
 
@@ -104,7 +108,7 @@ Pero todas estas acciones tienen en común que corrigen los errores del computad
 
             <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
 
-            <Button>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+            <Button onClick={()=>navigation('/tecnico')}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
 
           </MaintenanceCard>
 
