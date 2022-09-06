@@ -27,7 +27,7 @@ import * as React from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { useForm } from '../../../Hooks/useForm';
 import { getAuth } from "firebase/auth";
-import { db } from '../../../FireBase/JulianFirebase';
+import { db } from '../../../Utils/JulianFirebase';
 import { useNavigate } from 'react-router-dom';
 
 export const Inputsigin = React.forwardRef((props, ref) => {

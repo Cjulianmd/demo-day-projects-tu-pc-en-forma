@@ -7,7 +7,7 @@ import NavBar from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../FireBase/JulianFirebase';
+import { db } from '../../Utils/JulianFirebase';
 import { getVideos } from '../../Redux/Actions/Actions';
 import { useDispatch } from 'react-redux';
 
