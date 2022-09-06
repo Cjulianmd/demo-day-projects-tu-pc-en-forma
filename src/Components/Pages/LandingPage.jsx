@@ -1,14 +1,11 @@
 //! Sebastian
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
+import { HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import UnloggedNavBar from '../Modules/UnloggedNavBar';
 
 function LandingPage() {
-
-  // const navigation = useNavigate();
 
 
   return (
