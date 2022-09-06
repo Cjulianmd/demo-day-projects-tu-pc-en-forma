@@ -15,14 +15,12 @@ import * as React from 'react'
 import { NavLink } from 'react-router-dom';
 import { PasswordField } from './PasswordField'
 import { OAuthButtonGroup } from './OAuthButtonGroup';
-import SimpleNavBar from '../../Modules/SimpleNavBar';
-import Footer from '../../Modules/Footer';
+
 
 
 export const LogIn = () => (
 
   <div style={{backgroundColor: '#ffffff'}}>
-    <SimpleNavBar />
 
     <Container
       maxW="lg"
@@ -104,7 +102,6 @@ export const LogIn = () => (
       </Stack>
     </Container>
 
-    <Footer />
 
   </div>
 )

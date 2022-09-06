@@ -176,3 +176,33 @@ export const MaintenanceCard = styled.div`
     color: #ffffff;
   }
 `;
+
+export const ToolsContainer = styled.div`
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+`;
+
+export const TargetContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

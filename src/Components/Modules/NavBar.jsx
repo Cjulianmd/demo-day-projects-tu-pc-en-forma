@@ -10,7 +10,7 @@ import { getAuth, signOut, deleteUser } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { db } from '../../FireBase/JulianFirebase';
+import { db } from '../../Utils/JulianFirebase';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { actionLogIn, actionLogOut } from '../../Redux/Actions/Actions';
