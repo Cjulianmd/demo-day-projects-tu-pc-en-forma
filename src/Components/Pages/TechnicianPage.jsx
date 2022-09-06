@@ -47,15 +47,15 @@ function TechnicianPage() {
      updateDoc(doc(db, 'Tecnicos', '1230'),{
         citas: arrayUnion({
             
-            nombre: name,
+            name: name,
             apellidos:apellidos,
             DNI:DNI,
             equipo:equipo,
-            telefono:'',
-            correo:'',
-            descripcion:'',
-            fecha:'',
-            hora:''
+            telefono:telefono,
+            correo:correo,
+            descripcion:descripcion,
+            fecha:fecha,
+            hora:hora
             
         })
       
@@ -105,7 +105,7 @@ function TechnicianPage() {
                       <td>{i.fecha}</td>
                       <td>{i.hora}</td>
                       <td>
-                        <GiClick onClick={()=> escogerCita(
+                        <GiClick style={{cursor:'pointer', fontSize:'1.5rem', color:'#675cb0'}} onClick={()=> escogerCita(
                             i.name, 
                             i.apellidos,
                             i.DNI,
