@@ -22,7 +22,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { db } from '../../../FireBase/JulianFirebase';
+import { db } from '../../../Utils/JulianFirebase';
 
 
 export const PasswordField = React.forwardRef((props, ref) => {
