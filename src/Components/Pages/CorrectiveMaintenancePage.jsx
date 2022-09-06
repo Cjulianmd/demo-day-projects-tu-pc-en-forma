@@ -5,10 +5,12 @@ import  Navbar  from '../Modules/NavBar';
 import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
+import { useSelector } from 'react-redux';
 
 function CorrectiveMaintenancePage() {
-
+  const videoC = useSelector(state => state.ManVideos.correctivo)
   return (
+  
 
     <>
     <MainContainer>
@@ -88,7 +90,7 @@ Pero todas estas acciones tienen en común que corrigen los errores del computad
           </LandingCard>
 
           <VideoContainer>
-            <VideoPlayer /* video={videoP}*/ />
+            <VideoPlayer  video={videoC} />
           </VideoContainer>
 
 
