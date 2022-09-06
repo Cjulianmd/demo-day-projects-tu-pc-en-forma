@@ -8,8 +8,13 @@ import Footer from "../Modules/Footer";
 import NavBar from "../Modules/NavBar";
 import Table from "react-bootstrap/Table";
 import { GiClick } from "react-icons/gi";
-import { collection,getDocs } from "firebase/firestore";
+import { arrayUnion, collection,doc,getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../Utils/JulianFirebase";
+import '../../Styles/felixCss.css';
+import { toast } from "react-toastify";
+
+
+
 
 function TechnicianPage() {
   const [citasL, setCitasL] = useState([]);
@@ -28,6 +33,39 @@ function TechnicianPage() {
     });
   }, [setCitasL]);
 
+  const escogerCita=(  
+    name, 
+    apellidos,
+    DNI,
+    equipo,
+    telefono,
+    correo,
+    descripcion,
+    fecha,
+    hora
+    )=>{
+     updateDoc(doc(db, 'Tecnicos', '1230'),{
+        citas: arrayUnion({
+            
+            nombre: name,
+            apellidos:apellidos,
+            DNI:DNI,
+            equipo:equipo,
+            telefono:'',
+            correo:'',
+            descripcion:'',
+            fecha:'',
+            hora:''
+            
+        })
+      
+     })
+     .then(()=>{
+        toast.success('Cita agregada. ');
+     })
+
+  }
+
   return (
     <>
       <MainContainer>
@@ -36,7 +74,7 @@ function TechnicianPage() {
           <LandingSections>
             <h1>Citas disponibles.</h1>
             <p style={{margin:'1.5rem 0' }}>Estas son las citas disponibles en el sistema. Elige una:</p>
-            <Table striped bordered hover size="sm" >
+            <Table striped bordered hover size="sm" className="react-strap-table">
               <thead>
                 <tr>
                   <th>#</th>
@@ -67,7 +105,17 @@ function TechnicianPage() {
                       <td>{i.fecha}</td>
                       <td>{i.hora}</td>
                       <td>
-                        <GiClick />
+                        <GiClick onClick={()=> escogerCita(
+                            i.name, 
+                            i.apellidos,
+                            i.DNI,
+                            i.equipo,
+                            i.telefono,
+                            i.correo,
+                            i.descripcion,
+                            i.fecha,
+                            i.hora
+                            )}/>
                       </td>
                     </tr>
                   );
