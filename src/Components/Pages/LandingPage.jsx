@@ -1,9 +1,12 @@
 //! Sebastian
 
 import React from 'react';
-import { HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
+import { HelperContainer, LandingCard, LandingSections, MainContainer, Polaroid, PolaroidContainer, TargetContainer, TestimoniesContainer, ToolsContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import UnloggedNavBar from '../Modules/UnloggedNavBar';
+import { FaShieldVirus } from 'react-icons/fa';
+import { MdVpnKey } from 'react-icons/md';
+import { BsWifi } from 'react-icons/bs';
 
 function LandingPage() {
 
@@ -24,7 +27,7 @@ function LandingPage() {
 
             <TestimoniesContainer>
 
-              <img style={{width: '20%'}} src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" alt="Logo de Marca" />
+              <img style={{ width: '20%' }} src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" alt="Logo de Marca" />
 
               <LandingCard>
 
@@ -40,6 +43,65 @@ function LandingPage() {
               </LandingCard>
 
             </TestimoniesContainer>
+
+          </LandingSections>
+
+          <LandingSections>
+
+            <h1>Mejora la experiencia con tu equipo.</h1>
+
+            <ToolsContainer>
+
+              <p>Acontinuación, te proponemos algunas herramientas con las cuales puedes mejorar la experiencia con tu equipo por tu propia cuenta:</p>
+
+              <TestimoniesContainer style={{ margin: '3rem auto', gap: '4rem' }}>
+
+                  <TargetContainer>
+                    <p>
+                      <a
+                        href="https://www.f-secure.com/es/home/free-tools/online-scanner"
+                        target="_blank"
+                        className="text-reset"
+                        rel="noreferrer"
+                      >
+                        <FaShieldVirus style={{ fontSize: '8rem', marginLeft: '2rem'}} />
+                        <h2>Escanea tu equipo</h2>
+                      </a>
+                    </p>
+                  </TargetContainer>
+
+                <TargetContainer>
+                  <p>
+                    <a
+                      href="https://www.nperf.com/en/"
+                      target="_blank"
+                      className="text-reset"
+                      rel="noreferrer"
+                    >
+                      <BsWifi style={{ fontSize: '8rem', marginLeft: '2.5rem' }} />
+                      <h2>Escanea tu velocidad</h2>
+                    </a>
+                  </p>
+                </TargetContainer>
+
+                <TargetContainer>
+                  <p>
+                    <a
+                      href="https://chrome.google.com/webstore/detail/free-vpn-zenmate-best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=es"
+                      target="_blank"
+                      className="text-reset"
+                      rel="noreferrer"
+                    >
+                      <MdVpnKey style={{ fontSize: '8rem', marginLeft: '0.5rem' }} />
+                      <h2>Navega seguro</h2>
+                    </a>
+                  </p>
+                </TargetContainer>
+
+              </TestimoniesContainer>
+
+            </ToolsContainer>
+
 
           </LandingSections>
 
