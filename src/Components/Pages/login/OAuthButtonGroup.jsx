@@ -2,7 +2,7 @@ import { Button, ButtonGroup, VisuallyHidden } from '@chakra-ui/react'
 import { GoogleIcon } from './ProviderIcons'
 import { getAuth, signInWithPopup , GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 import { face, google } from '../../../Utils/JulianFirebase';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 const providers = [
   {
     name: 'Google',
