@@ -56,19 +56,19 @@ function LandingPage() {
 
               <TestimoniesContainer style={{ margin: '3rem auto', gap: '4rem' }}>
 
-                  <TargetContainer>
-                    <p>
-                      <a
-                        href="https://www.f-secure.com/es/home/free-tools/online-scanner"
-                        target="_blank"
-                        className="text-reset"
-                        rel="noreferrer"
-                      >
-                        <FaShieldVirus style={{ fontSize: '8rem', marginLeft: '2rem'}} />
-                        <h2>Escanea tu equipo</h2>
-                      </a>
-                    </p>
-                  </TargetContainer>
+                <TargetContainer>
+                  <p>
+                    <a
+                      href="https://www.f-secure.com/es/home/free-tools/online-scanner"
+                      target="_blank"
+                      className="text-reset"
+                      rel="noreferrer"
+                    >
+                      <FaShieldVirus style={{ fontSize: '8rem', marginLeft: '1rem' }} />
+                    </a>
+                  </p>
+                  <h2>Escanea tu equipo</h2>
+                </TargetContainer>
 
                 <TargetContainer>
                   <p>
@@ -78,10 +78,10 @@ function LandingPage() {
                       className="text-reset"
                       rel="noreferrer"
                     >
-                      <BsWifi style={{ fontSize: '8rem', marginLeft: '2.5rem' }} />
-                      <h2>Escanea tu velocidad</h2>
+                      <BsWifi style={{ fontSize: '8rem', marginLeft: '1.5rem' }} />
                     </a>
                   </p>
+                  <h2>Escanea tu velocidad</h2>
                 </TargetContainer>
 
                 <TargetContainer>
@@ -93,9 +93,9 @@ function LandingPage() {
                       rel="noreferrer"
                     >
                       <MdVpnKey style={{ fontSize: '8rem', marginLeft: '0.5rem' }} />
-                      <h2>Navega seguro</h2>
                     </a>
                   </p>
+                  <h2>Navega seguro</h2>
                 </TargetContainer>
 
               </TestimoniesContainer>

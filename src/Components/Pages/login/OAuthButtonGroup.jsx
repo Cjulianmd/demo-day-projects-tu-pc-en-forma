@@ -2,6 +2,7 @@ import { Button, ButtonGroup, VisuallyHidden } from '@chakra-ui/react'
 import { GoogleIcon } from './ProviderIcons'
 import { getAuth, signInWithPopup , GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 import { face, google } from '../../../Utils/JulianFirebase';
+import { useNavigate } from 'react-router-dom';
 const providers = [
   {
     name: 'Google',
@@ -12,6 +13,9 @@ const providers = [
     icon: 'f',
   },
 ]
+
+// const navigation = useNavigate();
+
 const auth = getAuth();
     const onClickFace = () => {
           signInWithPopup(auth, face)
@@ -24,6 +28,7 @@ const auth = getAuth();
             const accessToken = credential.accessToken;
             console.log(accessToken)
             console.log(user);
+            // navigation("/home");
 
             // ...
           })
@@ -56,6 +61,8 @@ const auth = getAuth();
         // The signed-in user info.
         const user = result.user;
         console.log(user.displayName);
+
+        // navigation("/home");   //! No consigo hacer funcional el redireccionamiento a la home luego de que realiza la autenticación. Necesito asistencia con este asunto.
         // ...
       }).catch((error) => {
         // Handle Errors here.
