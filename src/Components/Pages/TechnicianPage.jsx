@@ -35,7 +35,8 @@ function TechnicianPage() {
         <HelperContainer>
           <LandingSections>
             <h1>Citas disponibles.</h1>
-            <Table striped bordered hover size="sm">
+            <p style={{margin:'1.5rem 0' }}>Estas son las citas disponibles en el sistema. Elige una:</p>
+            <Table striped bordered hover size="sm" >
               <thead>
                 <tr>
                   <th>#</th>
