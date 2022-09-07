@@ -13,9 +13,12 @@ import {
   arrayUnion,
   collection,
   doc,
+  documentId,
   getDoc,
   getDocs,
+
   query,
+
   updateDoc,
   where,
 } from "firebase/firestore";
@@ -25,11 +28,12 @@ import { toast } from "react-toastify";
 
 function TechnicianPage() {
   const [citasL, setCitasL] = useState([]);
-  const [state, setstate] = useState(initialState)
+  const [citasT, setCitasT] = useState([]);   //TODO AGREGAR EL VALOR POR DEFECTO DE LAS CITAS DEL TECNICO
+
 
 
   useEffect(() => {
-    getDocs(collection(db, "Citas"), where('estado', '==', 'creada'))
+    getDocs(query(collection(db, "Citas"), where('estado', '==', 'creada')))
     .then((response) => {
       let listaCitas = [];
       response.forEach(
@@ -42,13 +46,28 @@ function TechnicianPage() {
       console.log(listaCitas);
     });
 
-
-    getDocs(query(db, "Tecnicos", '1230'))
-    .then((resp) => {
-        setReserva(resp)     
+    getDoc(doc(db, "Tecnicos", '1230'))
+    .then((response) => {
+     
+    let dataTecnico = response.data() 
+    console.log(dataTecnico);
+    getDocs(query(collection(db, "Citas"), where(documentId(), 'in', dataTecnico.citas)))
+    .then((response)=>{
+       
+        let listaCitas = [];
+        response.forEach(
+          (doc) => {
+            console.log(doc.data());
+            listaCitas.push(doc.data());
+          },
+          [listaCitas]
+        );
+        setCitasT(listaCitas); 
+        
+    })
       });
-
-  }, [setCitasL]);
+    
+  }, [setCitasL, setCitasT]);
 
 
 
@@ -66,8 +85,11 @@ function TechnicianPage() {
         updateDoc(doc(db, "Citas", citasL[index].DNI ), {estado:'agendada', tecnico: 'name'})
         .then(()=>{
             let aux = Object.assign([], citasL)
-            aux.splice(index, 1)
+            let temporal = aux.splice(index, 1)
             setCitasL(aux)
+            let temporal2 = [...citasT, temporal[0]]
+            console.log(temporal2)
+            setCitasT(temporal2)
             toast.success("Cita agregada. ");
         })
    
@@ -141,7 +163,7 @@ function TechnicianPage() {
             </Table>
 
             <h1>Citas agendadas.</h1>
-            <Table striped bordered hover size="sm">
+            <Table    className="react-strap-table" striped bordered hover size="sm" >
               <thead>
                 <tr>
                   <th>Cita</th>
@@ -158,7 +180,7 @@ function TechnicianPage() {
                 </tr>
               </thead>
               <tbody>
-               {reserva.citas.map((c, index, citas) => {
+               {citasT.map((c, index, citasT) => {
                   return (
                     <tr>
                       <td>{index + 1}</td>
@@ -176,17 +198,7 @@ function TechnicianPage() {
                   );
                 })}
 
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+              
               </tbody>
             </Table>
           </LandingSections>
