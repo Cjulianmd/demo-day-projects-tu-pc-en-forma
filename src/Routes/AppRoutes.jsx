@@ -12,6 +12,7 @@ import ServicesHomePage from '../Components/Pages/ServicesHomePage';
 import PreventiveMaintenancePage from '../Components/Pages/PreventiveMaintenancePage';
 import CorrectiveMaintenancePage from '../Components/Pages/CorrectiveMaintenancePage';
 import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
+import TechnicianPage from '../Components/Pages/TechnicianPage';
 
 function AppRoutes() {
 
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Route path="/preventive" element={<PrivateRoutes auth={logged}> <PreventiveMaintenancePage /> </PrivateRoutes>} />
         <Route path="/corrective" element={<PrivateRoutes auth={logged}> <CorrectiveMaintenancePage /> </PrivateRoutes>} />
         <Route path="/software" element={<PrivateRoutes auth={logged}> <SoftwareUpdatePage /> </PrivateRoutes>} />
+        <Route path="/tecnico" element={<PrivateRoutes auth={logged}> <TechnicianPage /> </PrivateRoutes>} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
