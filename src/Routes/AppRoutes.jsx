@@ -15,8 +15,8 @@ import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
 import Aceptwork from '../Components/Pages/aceptwoek';
 function AppRoutes() {
 
-  //const logged = useSelector(state => state.userLogIn.isLogged);
-  const logged = true;
+  const logged = useSelector(state => state.userLogIn.isLogged);
+
   return (
 
     <BrowserRouter>

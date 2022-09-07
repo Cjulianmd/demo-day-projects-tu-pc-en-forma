@@ -152,7 +152,7 @@ function Mentores() {
                 <h2>
                 <AccordionButton>
                     <Box color='black' flex='1' textAlign='left'>
-                     Fliltro Monitores (presione aqui)
+                     Fliltro (presione aqui)
                     </Box>
                     <AccordionIcon />
                 </AccordionButton>
@@ -168,7 +168,7 @@ function Mentores() {
         </Accordion>
         <><br/>
             {products.map(({name,Direccion,cedula,información_de_contacto,apellido,description,equipo,id}) => (
-                <LinkBox key={id} valueas='article' maxW='sm' p='3' borderWidth='1px' rounded='md'>
+                <LinkBox key={id} valueas='article' maxW='90%' p='3' borderWidth='1px' rounded='md'>
                 <Accordion>
                 <AccordionItem>
                 <h2>
