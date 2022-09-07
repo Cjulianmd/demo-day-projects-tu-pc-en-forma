@@ -12,8 +12,6 @@ import {
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
-import Footer from '../../Modules/Footer'
-import SimpleNavBar from '../../Modules/SimpleNavBar'
 import { Inputsigin } from './Input'
 import { OAuthButtonGroup } from './OAuthButtonGroup'
 

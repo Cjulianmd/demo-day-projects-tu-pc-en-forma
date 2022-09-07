@@ -1,11 +1,15 @@
 import { Button, ButtonGroup, VisuallyHidden } from '@chakra-ui/react'
 import { GoogleIcon } from './ProviderIcons'
 import { getAuth, signInWithPopup , GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
-import { face, google } from '../../../FireBase/JulianFirebase';
+
+
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { actionLogIn } from '../../../Redux/Actions/Actions';
 import { toast } from 'react-toastify';
+import { face, google } from '../../../Utils/JulianFirebase';
+// import { useNavigate } from 'react-router-dom';
+
 const providers = [
   {
     name: 'Google',
@@ -16,6 +20,7 @@ const providers = [
     icon: 'f',
   },
 ]
+
 export const OAuthButtonGroup = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
@@ -43,6 +48,8 @@ const auth = getAuth();
             dispatch(logInaction);
             toast.success('Bienvenido.')
             navigation("/home");
+            // navigation("/home");
+
 
             // ...
           })
@@ -70,7 +77,6 @@ const auth = getAuth();
       .then((result) => {
         // The signed-in user info.
         const user = result.user;
-
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;
@@ -87,7 +93,6 @@ const auth = getAuth();
         dispatch(logInaction);
         toast.success('Bienvenido.')
         navigation("/home");
-        // ...
       })
       .catch((error) => {
         // Handle Errors here.

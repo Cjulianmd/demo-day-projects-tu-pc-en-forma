@@ -2,20 +2,36 @@
 
 
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { logInReducer } from '../Reducers/Reducers';
+import { logInReducer, videosReducer } from '../Reducers/Reducers';
 
 
 let Store;
 
-const r = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose  //*Important Eliminar previo a realizar el deploy
+if (process.env.NODE_ENV !== 'production') {
 
-Store = createStore(
-  combineReducers(
-    {
-      userLogIn: logInReducer,
-    }
-  ), r(applyMiddleware())
-)
+  const r = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+  Store = createStore(
+    combineReducers(
+      {
+        userLogIn: logInReducer,
+        ManVideos: videosReducer
+      }
+    ), r(applyMiddleware())
+  )
+
+} else {
+  
+  Store = createStore(
+    combineReducers(
+      {
+        userLogIn: logInReducer,
+        ManVideos: videosReducer
+      }
+    )
+  )
+  
+}
 
 
 export default Store;

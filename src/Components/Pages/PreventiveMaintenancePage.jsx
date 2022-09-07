@@ -1,227 +1,124 @@
 //! Julián
-import * as React from 'react'
-import {
-  Button,
-  Input,
-} from '@chakra-ui/react'
-import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../FireBase/JulianFirebase'
-import { useForm } from './../../Hooks/useForm';
-import {
-  Container,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  IconButton,
-  VStack,
-  HStack,
-  Wrap,
-  WrapItem,
-  FormControl,
-  FormLabel,
-  InputGroup,
-  InputLeftElement,
-  Textarea,
-} from '@chakra-ui/react';
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord} from 'react-icons/bs';
+
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Button, HelperContainer, Input, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+import Footer from '../Modules/Footer';
+import NavBar from '../Modules/NavBar';
+import VideoPlayer from '../Modules/VideoPlayer';
+
 function PreventiveMaintenancePage() {
 
-  const [formValues, handleInputChange, reset] = useForm({
-    name: '',
-    apellido: '',
-    contacto: '',
-    description: '',
-    direccion: '',
-    cedula: '',
-    equipo: '',
-  })
-
-  const agendar = () => {
-    return () => {
-
-      addDoc(collection(db, "agenda_mantenimiento"), formValues)
-      console.log(formValues)
-      reset()
-
-    }
-  }
+  const videoP = useSelector(state => state.ManVideos.preventivo)
 
   return (
+
     <>
-      <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
-        <Flex>
-          <Box
-            bg="#02054B"
-            color="white"
-            borderRadius="lg"
-            m={{ sm: 4, md: 16, lg: 10 }}
-            p={{ sm: 5, md: 5, lg: 16 }}>
-            <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                <WrapItem>
-                  <Box>
-                    <Heading>Contact</Heading>
-                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                      aqui puedes agendar cita para el mantenimiento 
-                    </Text>
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                          +91-988888888
-                        </Button>
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                          hello@abc.com
-                        </Button>
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                          Karnavati, India
-                        </Button>
-                      </VStack>
-                    </Box>
-                    <HStack
-                      mt={{ lg: 10, md: 10 }}
-                      spacing={5}
-                      px={5}
-                      alignItems="flex-start">
-                      <IconButton
-                        aria-label="facebook"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
-                        icon={<MdFacebook size="28px" />}
-                      />
-                    </HStack>
-                  </Box>
-                </WrapItem>
-                <WrapItem>
-                  <Box bg="white" borderRadius="lg">
-                    <Box m={8} color="#0B0E3F">
-                      <VStack spacing={5}>
-                        <FormControl id="name">
-                          <FormLabel>nombre</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                          <Input placeholder='nombre' onChange={handleInputChange} value={formValues.name} id="name" name="name" type="text" />
-                          </InputGroup>
-                        </FormControl> 
-                         <FormControl id="name">
-                          <FormLabel>apellido</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />
-                            }
-                            />
-                          <Input placeholder='apellido' onChange={handleInputChange} value={formValues.apellido} id="apellido" name="apellido" type="text" />
-                          </InputGroup>
-                        </FormControl>
+      <MainContainer>
 
-                        <FormControl id="name">
-                          <FormLabel>marca y tipo de equipo</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />
-                            }
-                            />
-                          <Input placeholder='equipo' onChange={handleInputChange} value={formValues.equipo} id="equipo" name="equipo" type="text" />
-                          </InputGroup>
-                        </FormControl>
+        <NavBar />
 
-                        <FormControl id="name">
-                          <FormLabel>información de contacto</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                          <Input placeholder='información de contacto' onChange={handleInputChange} value={formValues.contacto} id="contacto" name="contacto" type="text" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Direccion</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                          <Input placeholder='Direccion' onChange={handleInputChange} value={formValues.direccion} id="direccion" name="direccion" type="text" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Cedula</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                            <Input placeholder='cedula' onChange={handleInputChange} value={formValues.cedula} id="cedula" name="cedula" type="number" />
-                          </InputGroup>
-                        </FormControl>
+        <HelperContainer>
 
-                        <FormControl id="name">
-                          <FormLabel>Descripcion</FormLabel>
-                          <Textarea
-                            borderColor="gray.300"
-                            _hover={{
-                              borderRadius: 'gray.300',
-                            }}
-                            placeholder="Descripcion"
-                            onChange={handleInputChange}
-                             value={formValues.description} 
-                             id="description" 
-                             name="description" 
-                          />
-                        </FormControl>
-                        <FormControl id="name" float="right">
-                          <Button
-                            onClick={agendar()}
-                            variant="solid"
-                            bg="#0D74FF"
-                            color="white"
-                            _hover={{}}>
-                            Send
-                          </Button>
-                        </FormControl>
-                      </VStack>
-                    </Box>
-                  </Box>
-                </WrapItem>
-              </Wrap>
-            </Box>
-          </Box>
-        </Flex>
-      </Container>
+          <LandingSections>
+
+            <h1>Mantenimientos preventivos.</h1>
+
+            <LandingCard>
+
+              <MaintenanceImg style={{ margin: '2rem auto' }} src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662393454/Demoday/Mantenimientos_anxaqn.png" alt="Mantenimientos Imagen" />
+
+              <h2>¿Qué incluye un buen mantenimiento?</h2>
+              <p>
+
+                <b>1. Verificación de funcionamiento:</b> antes de realizar cualquier acción se debe verificar que el equipo funcione bien y tomar nota de comportamientos extraños o desconfiguraciones en el sistema operativo.
+
+                <br /><br />
+
+                <b>2. Limpieza física:</b> consiste en desarmar y limpiar de los componentes físicos (hardware) del equipo.
+                En el caso de los computadores de mesa se debe usar una sopladora para sacar el polvo y químicos especiales para limpiar las áreas delicadas. Con los computadores portátiles se deben cumplir tres etapas cuidadosamente:
+
+                <br />
+
+                <ul style={{ marginLeft: '3rem' }}>
+                  <li> Primero se debe desarmar el equipo y separar los componentes.</li>
+                  <li> Segundo limpiar todas las partes con una brocha, lubricar el ventilador de la CPU y cambiar la crema disipadora.</li>
+                  <li> Tercero, volver a ensamblar el equipo y hacer pruebas de funcionamiento.</li>
+                </ul>
+
+                <br />
+
+                <b>3. Limpieza lógica:</b> El último paso se divide en cuatro acciones: eliminar, actualizar, desinstalar e instalar.
+
+                <br />
+
+                <ul style={{ marginLeft: '3rem' }}>
+                  <li>Eliminar virus si los hay, también los archivos temporales del sistema, vaciar papeleras de reciclaje y borrar historiales antiguos.</li>
+                  <li>Actualizar antivirus, aplicaciones y programas como navegadores, reproductores, lectores de pdf, entre otros.</li>
+                  <li>Desinstalar programas y aplicaciones sospechosas, obsoletas o innecesarias.</li>
+                  <li>Instalar programas necesarios, en su mayoría son aplicaciones de seguridad como antimalware o cortafuegos, también puede ser algún programa que haya pedido el cliente.</li>
+                </ul>
+              </p>
+              <br />
+
+              <h2>Características de un mantenimiento preventivo</h2>
+              <p>
+                El mantenimiento preventivo se diferencia de los demás en que:
+                <br />
+                <ul style={{ marginLeft: '3rem' }}>
+                  <li>Previene daños: Este es su principal objetivo, al eliminar agentes dañinos y corregir desviaciones de funcionamiento se evitan gran cantidad de daños.</li>
+                  <li>Aumenta la vida útil del computador: Al mantener el equipo en buenas condiciones y evitar situaciones de riesgo se garantiza la vida útil del equipo.</li>
+                  <li>Es económico: Ya que el proceso está estandarizado y rara vez se necesitan repuestos.</li>
+                  <li>Se realiza antes de que algo falle: El mantenimiento preventivo en cualquier área debe hacerse antes de que existan averías o fallas en los equipos. El objetivo principal es evitar que los equipos fallen y causen retrasos a sus usuarios.</li>
+                  <li>Es rutinario: Las tareas a realizar durante este tipo de mantenimiento, están estipuladas mediante un protocolo y suelen ser bastante mecánicas.</li>
+                  <li>Suele ser periódico y programado: Es ideal crear calendarios de mantenimiento preventivo y programar las fechas, herramientas y avisos necesarios. Esto evita que los equipos estén fuera de servicio por mucho tiempo y en momentos críticos.</li>
+                </ul>
+              </p>
+
+              <br />
+              <h2>Beneficios del mantenimiento preventivo de computadores</h2>
+              <p>
+                Realizar mantenimiento preventivo regularmente tiene algunos efectos buenos en los computadores:
+                <ul style={{ marginLeft: '3rem' }}>
+                  <li>Evita el sobrecalentamiento: Al reemplazar la crema disipadora y las almohadillas térmicas se garantiza el buen funcionamiento del sistema de refrigeración y se previene el sobrecalentamiento.</li>
+                  <li>Evita el deterioro de los ventiladores: Al lubricar los ventiladores evita que se averíen por fricción y que pierdan su centro.</li>
+                  <li>Elimina agentes peligrosos: La limpieza física elimina grasa, sustancias salinas, migajas de comida y todo tipo de residuos dañinos.</li>
+                </ul>
+              </p>
+
+            </LandingCard>
+
+            <VideoContainer>
+              <VideoPlayer video={videoP} />
+            </VideoContainer>
+
+
+          </LandingSections>
+
+          <LandingSections>
+
+            <MaintenanceCard>
+
+              <h2>¡Agenda tu mantenimiento con nosotros!</h2>
+
+              <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
+
+              <Button>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+
+            </MaintenanceCard>
+
+          </LandingSections>
+
+        </HelperContainer>
+
+      </MainContainer>
+
+      <Footer />
     </>
-  );
+
+  )
+
 }
 
 export default PreventiveMaintenancePage;

@@ -8,11 +8,13 @@ import LandingPage from '../Components/Pages/LandingPage';
 import LogInPage from '../Components/Pages/login/login';
 import RegisterPage from '../Components/Pages/login/create';
 import HomePage from '../Components/Pages/HomePage';
-import ServicesHomePage from '../Components/Pages/ServicesHomePage';
+import UserProfilePage from '../Components/Pages/UserProfilePage';
 import PreventiveMaintenancePage from '../Components/Pages/PreventiveMaintenancePage';
 import CorrectiveMaintenancePage from '../Components/Pages/CorrectiveMaintenancePage';
 import SoftwareUpdatePage from '../Components/Pages/SoftwareUpdatePage';
 import Aceptwork from '../Components/Pages/aceptwoek';
+import TechnicianPage from '../Components/Pages/TechnicianPage';
+
 function AppRoutes() {
 
   const logged = useSelector(state => state.userLogIn.isLogged);
@@ -30,7 +32,8 @@ function AppRoutes() {
         <Route path="/corrective" element={<PrivateRoutes auth={logged}> <CorrectiveMaintenancePage /> </PrivateRoutes>} />
         <Route path="/software" element={<PrivateRoutes auth={logged}> <SoftwareUpdatePage /> </PrivateRoutes>} />
         <Route path="/aceptwork" element={<PrivateRoutes auth={logged}> <Aceptwork /> </PrivateRoutes>} />
-
+        <Route path="/tecnico" element={<PrivateRoutes auth={logged}> <TechnicianPage /> </PrivateRoutes>} />
+        <Route path="/user" element={<PrivateRoutes auth={logged}> <UserProfilePage /> </PrivateRoutes>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

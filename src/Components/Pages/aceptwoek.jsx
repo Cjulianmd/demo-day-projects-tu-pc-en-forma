@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LinkBox, Button, WrapItem, Stack, Center } from '@chakra-ui/react';
 import React from 'react';
-import { db } from '../../FireBase/JulianFirebase';
+import { db } from '../../Utils/JulianFirebase';
 import { useForm } from './../../Hooks/useForm';
 import {
     Table,

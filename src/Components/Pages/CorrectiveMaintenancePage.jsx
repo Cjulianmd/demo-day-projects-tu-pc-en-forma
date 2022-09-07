@@ -1,37 +1,13 @@
+import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 //! Julián
-import {
-  Button,
-  Input,
-} from '@chakra-ui/react'
-import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../FireBase/JulianFirebase'
 import { useForm } from './../../Hooks/useForm';
-import {
-  Container,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  IconButton,
-  VStack,
-  HStack,
-  Wrap,
-  WrapItem,
-  FormControl,
-  FormLabel,
-  InputGroup,
-  InputLeftElement,
-  Textarea,
-} from '@chakra-ui/react';
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord} from 'react-icons/bs';
 import React from 'react';
+import  Navbar  from '../Modules/NavBar';
+
+import Footer from '../Modules/Footer';
+import VideoPlayer from '../Modules/VideoPlayer';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function CorrectiveMaintenancePage() {
   const [formValues, handleInputChange, reset] = useForm({
@@ -43,185 +19,117 @@ function CorrectiveMaintenancePage() {
     cedula: '',
   })
 
-  const agendar = () => {
-    return () => {
+  const videoC = useSelector(state => state.ManVideos.correctivo);
+  const navigation = useNavigate();
 
-      addDoc(collection(db, "agenda_arreglo"), formValues)
-      console.log(formValues)
-      reset()
-
-    }
-  }
   return (
-    <>
-      <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
-        <Flex>
-          <Box
-            bg="#02054B"
-            color="white"
-            borderRadius="lg"
-            m={{ sm: 4, md: 16, lg: 10 }}
-            p={{ sm: 5, md: 5, lg: 16 }}>
-            <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                <WrapItem>
-                  <Box>
-                    <Heading>Contact</Heading>
-                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                      aqui puedes agendar cita para el mantenimiento 
-                    </Text>
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                          +91-988888888
-                        </Button>
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                          hello@abc.com
-                        </Button>
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                          Karnavati, India
-                        </Button>
-                      </VStack>
-                    </Box>
-                    <HStack
-                      mt={{ lg: 10, md: 10 }}
-                      spacing={5}
-                      px={5}
-                      alignItems="flex-start">
-                      <IconButton
-                        aria-label="facebook"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
-                        icon={<MdFacebook size="28px" />}
-                      />
-                      <IconButton
-                        aria-label="github"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
-                        icon={<BsGithub size="28px" />}
-                      />
-                      <IconButton
-                        aria-label="discord"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
-                        icon={<BsDiscord size="28px" />}
-                      />
-                    </HStack>
-                  </Box>
-                </WrapItem>
-                <WrapItem>
-                  <Box bg="white" borderRadius="lg">
-                    <Box m={8} color="#0B0E3F">
-                      <VStack spacing={5}>
-                        <FormControl id="name">
-                          <FormLabel>nombre</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                          <Input placeholder='nombre' onChange={handleInputChange} value={formValues.name} id="name" name="name" type="text" />
-                          </InputGroup>
-                        </FormControl> 
-                         <FormControl id="name">
-                          <FormLabel>apellido</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />
-                            }
-                            />
-                          <Input placeholder='apellido' onChange={handleInputChange} value={formValues.apellido} id="apellido" name="apellido" type="text" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>información de contacto</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                          <Input placeholder='información de contacto' onChange={handleInputChange} value={formValues.información_de_contacto} id="información_de_contacto" name="información_de_contacto" type="text" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Direccion</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                          <Input placeholder='Direccion' onChange={handleInputChange} value={formValues.Direccion} id="Direccion" name="Direccion" type="text" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Cedula</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
-                            <Input placeholder='cedula' onChange={handleInputChange} value={formValues.cedula} id="cedula" name="cedula" type="number" />
-                          </InputGroup>
-                        </FormControl>
+  
 
-                        <FormControl id="name">
-                          <FormLabel>Descripcion</FormLabel>
-                          <Textarea
-                            borderColor="gray.300"
-                            _hover={{
-                              borderRadius: 'gray.300',
-                            }}
-                            placeholder="Descripcion"
-                            onChange={handleInputChange}
-                             value={formValues.description} 
-                             id="description" 
-                             name="description" 
-                          />
-                        </FormControl>
-                        <FormControl id="name" float="right">
-                          <Button
-                            onClick={agendar()}
-                            variant="solid"
-                            bg="#0D74FF"
-                            color="white"
-                            _hover={{}}>
-                            Send
-                          </Button>
-                        </FormControl>
-                      </VStack>
-                    </Box>
-                  </Box>
-                </WrapItem>
-              </Wrap>
-            </Box>
-          </Box>
-        </Flex>
-      </Container>
-    </>
+    <>
+    <MainContainer>
+
+      <Navbar/>
+
+      <HelperContainer>
+
+        <LandingSections>
+
+          <h1>Mantenimientos correctivos.</h1>
+
+          <LandingCard>
+
+            <MaintenanceImg style={{ margin: '2rem auto' }} src="https://res.cloudinary.com/felixces/image/upload/v1662408204/imagenes%20demo/homepage/correctivo_bff1nm.jpg" alt="Mantenimientos Imagen" />
+
+            <h2>¿Qué es el mantenimiento correctivo de computadores?</h2>
+            <p>
+
+              <b>1. ¿ De que se trata ?</b> Se trata del conjunto de tareas técnicas, realizadas para corregir fallas en un computador. Normalmente consisten en reparar o sustituir componentes defectuosos, que pueden ser de software o hardware.
+
+              <br /><br />
+
+              <b>2. ¿ Que fallas hay?</b> En los casos donde la falla es física (que proviene del hardware) es común cambiar componentes como el disco duro o la memoria RAM.
+
+Y cuando la falla es lógica (que proviene del software) se acostumbra a re-instalar programas, eliminar antivirus o formatear.
+
+Pero todas estas acciones tienen en común que corrigen los errores del computador para restablecer su funcionamiento normal.
+          
+              <br />
+
+           
+            
+            </p>
+            <br />
+
+            <h2>Mantenimiento correctivo de hardware</h2>
+            <p>
+            Este mantenimiento se hace cuando el origen de la falla está en los componentes físicos (memoria RAM, disco duro, entre otros) del computador. Estos son algunos ejemplos:
+              <br />
+              <ul style={{ marginLeft: '3rem' }}>
+                <li>Cambio de componentes como la fuente de poder o el disco duro.</li>
+                <li>Reconstrucción de carcasas o bisagras en caso de portátiles.</li>
+                <li>Reparación electrónica.</li>
+                
+              </ul>
+            </p>
+
+            <br />
+            <h2>Características del mantenimiento correctivo</h2>
+            <p>
+            Igual que el mantenimiento preventivo, este tipo de mantenimiento tiene algunos factores que lo caracterizan, como:
+              <ul style={{ marginLeft: '3rem' }}>
+                <li>No se programa en el tiempo.</li>
+                <li>Se realiza después del daño.</li>
+                <li>Casi siempre es más costoso que el mantenimiento preventivo.</li>
+                <li>Implica una pausa total o parcial de funcionamiento.</li>
+                <li>Toma más tiempo que el mantenimiento preventivo.</li>
+              </ul>
+            </p>
+            <h2>¿Cada cuánto se debe hacer mantenimiento correctivo al computador?​</h2>
+            <p>
+            Este tipo de mantenimiento no se programa en el tiempo, por el contrario, se trata de evitar, debido a esto no hay un tiempo establecido para realizarlo.
+           El mantenimiento correctivo se hace cuando el computador falla y es obligatorio.
+            </p>
+           
+            <h2>¿Cómo evitar los mantenimientos correctivos?​</h2>
+            <p>
+            Como mencionamos antes, lo ideal es evitar el mantenimiento correctivo el mayor tiempo posible. Aunque en algún momento será necesario pero hay algunas advertencias que puedes detectar y actuar para evitarlo, como:
+            <ul style={{ marginLeft: '3rem' }}>
+                <li>El sobrecalentamiento: si notas que tu computador se está calentando de más, llévalo a mantenimiento preventivo, esto te va a evitar una reparación más costosa a futuro.</li>
+                <li>Fallas repentinas: si el computador se reinicia solo, se demora mucho en encender o presenta comportamientos extraños, pídele a tu técnico de confianza que lo revise.</li>
+                <li>Avisos del antivirus: si tu antivirus te está diciendo que el equipo está en riesgo o que hay alguna amenaza que no ha podido eliminar, préstale atención y si es necesario pide soporte técnico.</li>
+              </ul>
+            </p>
+
+          </LandingCard>
+
+          <VideoContainer>
+            <VideoPlayer  video={videoC} />
+          </VideoContainer>
+
+
+        </LandingSections>
+
+        <LandingSections>
+
+          <MaintenanceCard>
+
+            <h2>¡Agenda tu mantenimiento con nosotros!</h2>
+
+            <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
+
+            <Button onClick={()=>navigation('/tecnico')}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+
+          </MaintenanceCard>
+
+        </LandingSections>
+
+      </HelperContainer>
+
+    </MainContainer>
+
+    <Footer />
+  </>
+
   )
 
 }
