@@ -86,6 +86,8 @@ function TechnicianPage() {
         .then(()=>{
             let aux = Object.assign([], citasL)
             let temporal = aux.splice(index, 1)
+            console.log(temporal)
+            console.log(citasT)
             setCitasL(aux)
             let temporal2 = [...citasT, temporal[0]]
             console.log(temporal2)
@@ -163,6 +165,9 @@ function TechnicianPage() {
             </Table>
 
             <h1>Citas agendadas.</h1>
+            <p style={{ margin: "1.5rem 0" }}>
+              Estas son las citas agendadas en el sistema.
+            </p>
             <Table    className="react-strap-table" striped bordered hover size="sm" >
               <thead>
                 <tr>
