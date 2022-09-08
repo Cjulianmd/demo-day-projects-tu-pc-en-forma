@@ -1,14 +1,23 @@
-//! felix
-
+import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+//! Julián
+import { useForm } from './../../Hooks/useForm';
 import React from 'react';
 import  Navbar  from '../Modules/NavBar';
-import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 function CorrectiveMaintenancePage() {
+  const [formValues, handleInputChange, reset] = useForm({
+    name: '',
+    apellido: '',
+    información_de_contacto: '',
+    description: '',
+    Direccion: '',
+    cedula: '',
+  })
 
   const videoC = useSelector(state => state.ManVideos.correctivo);
   const navigation = useNavigate();
@@ -120,7 +129,6 @@ Pero todas estas acciones tienen en común que corrigen los errores del computad
 
     <Footer />
   </>
-
 
   )
 

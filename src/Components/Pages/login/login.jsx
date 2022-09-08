@@ -15,13 +15,11 @@ import * as React from 'react'
 import { NavLink } from 'react-router-dom';
 import { PasswordField } from './PasswordField'
 import { OAuthButtonGroup } from './OAuthButtonGroup';
-
-
+import { useNavigate } from 'react-router-dom';
 
 export const LogIn = () => (
 
-  <div style={{backgroundColor: '#ffffff'}}>
-
+  <div >
     <Container
       maxW="lg"
       py={{
@@ -30,11 +28,30 @@ export const LogIn = () => (
       }}
       px={{
         base: '0',
-        sm: '8',
+        sm: '0',
       }}
     >
-      <Stack style={{ backgroundColor: '#675cb0', padding: '2rem', borderRadius: '5%' }} spacing="8">
-        <Stack spacing="6">
+
+        <Box
+        style={{ backgroundColor: '#9f90ea', padding: '1rem', borderRadius: '5%' }}
+          py={{
+            base: '0',
+            sm: '8',
+          }}
+          px={{
+            base: '4',
+            sm: '10',
+          }}
+          bg={useBreakpointValue({
+            base: 'transparent',
+            sm: 'bg-surface',
+          })}
+          borderRadius={{
+            base: 'none',
+            sm: 'xl',
+          }}
+        >
+         <Stack spacing="6">
           <Stack
             spacing={{
               base: '2',
@@ -61,48 +78,19 @@ export const LogIn = () => (
               </HStack> </NavLink>
           </Stack>
         </Stack>
-        <Box
-          py={{
-            base: '0',
-            sm: '8',
-          }}
-          px={{
-            base: '4',
-            sm: '10',
-          }}
-          bg={useBreakpointValue({
-            base: 'transparent',
-            sm: 'bg-surface',
-          })}
-          boxShadow={{
-            base: 'none',
-            sm: useColorModeValue('md', 'md-dark'),
-          }}
-          borderRadius={{
-            base: 'none',
-            sm: 'xl',
-          }}
-        >
-          <Stack style={{ backgroundColor: '#9f90ea', padding: '2rem', borderRadius: '5%' }} spacing="6">
-            <Stack spacing="5">
+          <Stack style={{ backgroundColor: '#9f90ea', padding: '1rem', borderRadius: '5%' }} spacing="10">
               <PasswordField />
-            </Stack>
-            <Stack spacing="6">
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color='white'>
+                <Text fontSize="sm" whiteSpace="nowrap" color='black'>
                   o hazlo con:
                 </Text>
                 <Divider />
               </HStack>
               <OAuthButtonGroup />
-            </Stack>
           </Stack>
         </Box>
-      </Stack>
     </Container>
-
-
   </div>
 )
 

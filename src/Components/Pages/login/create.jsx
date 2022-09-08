@@ -16,11 +16,8 @@ import { Inputsigin } from './Input'
 import { OAuthButtonGroup } from './OAuthButtonGroup'
 
 export const Create = () => (
-
-  <div style={{backgroundColor: '#ffffff'}}>
-
-
     <Container
+    style={{ backgroundColor: '#9f90ea', padding: '1rem', borderRadius: '5%' }}
       maxW="lg"
       py={{
         base: '12',
@@ -31,8 +28,6 @@ export const Create = () => (
         sm: '8',
       }}
     >
-      <Stack style={{ backgroundColor: '#675cb0', padding: '2rem', borderRadius: '5%' }} spacing="8">
-        <Stack spacing="6">
           <Stack
             spacing={{
               base: '2',
@@ -58,40 +53,28 @@ export const Create = () => (
               </NavLink>
             </HStack>
           </Stack>
-        </Stack>
         <Box
-          py={{
-            base: '0',
-            sm: '8',
-          }}
-          px={{
-            base: '4',
-            sm: '10',
-          }}
-          bg={useBreakpointValue({
-            base: 'transparent',
-            sm: 'bg-surface',
-          })}
-          boxShadow={{
-            base: 'none',
-            sm: useColorModeValue('md', 'md-dark'),
-          }}
-          borderRadius={{
-            base: 'none',
-            sm: 'xl',
-          }}
-        >
-          <Stack style={{ backgroundColor: '#9f90ea', padding: '2rem', borderRadius: '5%' }} spacing="6">
-            <Stack spacing="5">
-              <Inputsigin />
-            </Stack>
-          </Stack>
+        style={{ backgroundColor: '#9f90ea', padding: '0rem', borderRadius: '5%' }}
+        py={{
+          base: '0',
+          sm: '8',
+        }}
+        px={{
+          base: '4',
+          sm: '10',
+        }}
+        bg={useBreakpointValue({
+          base: 'transparent',
+          sm: 'bg-surface',
+        })}
+        borderRadius={{
+          base: 'none',
+          sm: 'xl',
+        }}
+         >
+          <Inputsigin />
         </Box>
-      </Stack>
     </Container>
-
-
-  </div>
 )
 
 export default Create;
