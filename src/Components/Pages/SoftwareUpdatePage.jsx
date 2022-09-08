@@ -1,219 +1,135 @@
 //! Julián
-import {
-  Container,
-  Button,
-  Stack,
-  Image,
-  Center,
-  Flex,
-  
-} from '@chakra-ui/react';
-import { LinkBox, LinkOverlay, Text, Heading,Box } from '@chakra-ui/react'
 import React from 'react';
+import  Navbar  from '../Modules/NavBar';
+import Footer from '../Modules/Footer';
+import VideoPlayer from '../Modules/VideoPlayer';
+import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 function SoftwareUpdatePage() {
-  //document.body.style.backgroundColor = '#675cb0';
+
+  const videoS = useSelector(state => state.ManVideos.software);
+  const navigation = useNavigate();
   return (
     <>
-    <Container maxW='100%' backgroundColor = '#afcdea'>
-      <Container maxW='70%'>
-        <Stack
-          as={Box}
-          textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-             Software update <br />
-            <Text as={'span'} color='#2f2c79'>
-            Features and Capabilities
-            </Text>
-          </Heading>
-          <Text color={'gray.500'}>
-          Automated software deployment is the auto-distribution of all packages in a working environment without zero to minimal manual intervention. Distributing software to all machines in a network can be a daunting task for IT Administrators, especially at large enterprises. 
-          </Text>
-          <Stack
-            direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-              colorScheme={'#2f2c79'}
-              bg={'#2f2c79'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: '#9f90ea',
-              }}>
-              Get Started
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
-            </Button>
-          </Stack>
-        </Stack>
-       </Container>
-      </Container>
+    <MainContainer>
 
-      <Container maxW={'7x7'}>
-      <Stack
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{  md: 'row' }}>
-        <Stack backgroundColor = '#afcdea' flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
-            >
-          <LinkOverlay color='#2f2c79' href='#'>
-              <Text
-                as={'span'}
-                position={'relative'}>
-                Obtener la actualización más reciente de Windows
-              </Text>
-            </LinkOverlay>
+      <Navbar/>
+
+      <HelperContainer>
+
+        <LandingSections>
+
+          <h1>Actualizacion de software.</h1>
+
+          <LandingCard>
+
+            <MaintenanceImg style={{ margin: '2rem auto' }} src="https://res.cloudinary.com/felixces/image/upload/v1662664321/imagenes%20demo/homepage/update_dn2jrk.jpg" alt="Mantenimientos Imagen" />
+
+            <h2>Actualizaciones de software: qué son, para qué sirven, cuándo instalarlas</h2>
+            <p>
+
+              <b>1. ¿Qué son las actualizaciones de software?</b> Las actualizaciones de software (también conocidas como parches) son fragmentos adicionales de software publicados por quienes producen los sistemas operativos y programas que usan nuestros equipos con el fin de mejorarlos.
+              Estas actualizaciones se instalan sobre el software actual del dispositivo y no suelen requerir que se instalen los programas desde cero.
+
+              <br /><br />
+
+              <b>2. Tipos de actualizaciones: ¿updates o upgrades? ¿Actualizaciones, parches o mejoras?</b>Si bien podríamos discutir sobre si lo más adecuado sería usar los términos «actualización», «parche» (sobre todo usado en España) o «mejora», lo más importante es entender que existen dos tipos de ellas, y que tienen diferencias clave que detallaremos a continuación:
+          
+              <br />
+              <b>A.  Actualizaciones</b>
+              <ul style={{ marginLeft: '3rem' }}>
+                <li>Hacen cambios menores en el software.</li>
+                <li>Corrigen errores u optimizan el funcionamiento de las funciones que ya tenemos.</li>
+                <li>Es el software existente, mejorado.</li>  
+                <li>Suelen ser fáciles de instalar, sin opciones que elegir.</li> 
+                <li>Suelen ser gratuitas.</li>   
+              </ul>
+              <br />
+              <b>B.  Mejoras</b>
+              <ul style={{ marginLeft: '3rem' }}>
+                <li>Hacen cambios mayores en el software.</li>
+                <li>Agregan capacidades nuevas y/o hacen cambios importantes en la interfaz.</li>
+                <li>Es software nuevo que elimina y reemplaza al anterior.</li>  
+                <li>Son más complicadas de instalar, con opciones varias para seleccionar.</li> 
+                <li>Suelen ser pagas.</li>   
+              </ul>
+             
+            
+            </p>
             <br />
-          </Heading>
-          <Text color={'gray.500'}>
-          Las características de Windows 11 se agregan y actualizan constantemente, y todas ellas (incluidas las actualizaciones principales)<br/> se entregan a tu dispositivo desde la página de Windows Update de Configuración.<br/> Windows te avisará si tienes que reiniciar el dispositivo para completar una actualización y, si es así, puedes elegir <br/>la hora que mejor te convenga para completar la actualización. Además, ten en cuenta lo siguiente:<br/>
 
-          Para buscar actualizaciones, selecciona Inicio Configuración Windows Update y luego selecciona Buscar actualizaciones. Si hay actualizaciones disponibles, puedes instalarlas.<br/>
-          <br/>
-          -Si tienes problemas con la actualización del dispositivo, incluidos problemas con actualizaciones principales anteriores, consulta las correcciones habituales en Solucionar problemas de actualización de Windows o usa Solucionar Windows problemas de actualización para guiarte por el proceso de solución de problemas.<br/>
-          <br/>
-          -Si Windows Update te advierte de que no tienes suficiente espacio en el dispositivo para instalar actualizaciones, consulta Liberar espacio para las actualizaciones de Windows.<br/>
-          <br/>
-          -Si tienes problemas de conexión a Internet durante la actualización del dispositivo, consulta Solucionar Wi-Fi problemas de conexión en Windows.<br/>
-          </Text>
-        </Stack>
-        <Flex
-          flex={1}
-          justify={'center'}
-          align={'center'}
-          position={'relative'}
-          w={'full'}>
-          <Box
-            position={'relative'}
-            height={'300px'}
-            rounded={'2xl'}
-            boxShadow={'2xl'}
-            width={'3x1'}
-            overflow={'hidden'}>
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              align={'center'}
-              w={'100%'}
-              h={'100%'}
-              src={
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2j-4nrACwh3ZppkhZbLMWVep-vLZxQWxDrg&usqp=CAU'
-              }
-            />
-          </Box>
-        </Flex>
-      </Stack>
-    </Container>
+            <h2>¿Qué hacen las actualizaciones de software? ¿Para qué sirven?</h2>
+            <p>
+            Expandiendo lo anterior, ahora repasaremos los tres motivos más comunes por los que existen las actualizaciones de software:
+              <br />
+              <ul style={{ marginLeft: '3rem' }}>
+                <li> Corrección de vulnerabilidades de seguridad</li>
+                <li>Corrección de errores</li>
+                <li> Mejoras del producto</li>
+                
+              </ul>
+            </p>
 
-
-    <br/>
-    <LinkBox maxW='2000px' p='5' backgroundColor='#2f2c79'>
-      <LinkBox backgroundColor = '#afcdea' left='20%' as='article' maxW='1000px' p='5' borderWidth='1px' >
-        <Heading size='md'  my='2'>
-          <LinkOverlay color='#2f2c79' href='#'>
-          Linux: Actualizar paquetes a su última versión
-          </LinkOverlay>
-        </Heading>
-        <Text>
-        Actualizar Linux a su última versión disponible implica a veces reinstalar la distribución que estés utilizando o hacerlo de forma gráfica. Sin embargo, puedes tener tu ordenador a punto con sólo actualizar los paquetes de Linux a su versión más reciente. Esto actualiza las aplicaciones y software que estén disponible oficialmente en los repositorios.
-        No tienes por qué ir actualizando todo el software de Linux individualmente. Con un sólo comando en la terminal, se actualizan automáticamente y sin problemas. Es un proceso rápido, aunque depende de cuánto tengas que actualizar. Te explicamos cómo lo puedes hacer.<br/>
-        <br/>
-        -Abre la Terminal (Control + Alt + T)<br/>
-        <br/>
-        -Teclea (sin comillas) "sudo apt-get update" y pulsa enter<br/>
-        <br/>
-        -Si tienes problemas de conexión a Internet durante la actualización del dispositivo, consulta Solucionar Wi-Fi problemas de conexión en Windows.<br/>
-        </Text>
-      </LinkBox>
-    </LinkBox>
-
-    <br/>
-    <Container maxW={'7x7'}>
-      <Stack
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{  md: 'row' }}>
-        <Flex
-                  flex={1}
-                  justify={'center'}
-                  align={'center'}
-                  position={'relative'}
-                  w={'full'}>
-                  <Box
-                    position={'relative'}
-                    height={'300px'}
-                    rounded={'2xl'}
-                    boxShadow={'2xl'}
-                    width={'3x1'}
-                    overflow={'hidden'}>
-                    <Image
-                      alt={'Hero Image'}
-                      fit={'cover'}
-                      align={'center'}
-                      w={'100%'}
-                      h={'100%'}
-                      src={
-                        'https://iosmac.es/wp-content/uploads/2014/09/logo-icono-apple.jpeg'
-                      }
-                    />
-                  </Box>
-                </Flex>
-
-        <Stack backgroundColor = '#afcdea' flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
-            >
-          <LinkOverlay color='#2f2c79' href='#'>
-              <Text
-                as={'span'}
-                position={'relative'}>
-                Mantener la Mac actualizada
-              </Text>
-            </LinkOverlay>
             <br />
-          </Heading>
-          <Text color={'gray.500'}>
-          Periódicamente, Apple publica actualizaciones del software de macOS, que pueden incluir actualizaciones para apps que vienen con tu Mac, así como actualizaciones de seguridad importantes.<br/>
-          <br/>
-          Si recibes una notificación que indica que hay actualizaciones de software disponibles, puedes elegir entre instalarlas o si quieres que se te recuerde al día siguiente. También puedes buscar actualizaciones de macOS manualmente en el panel "Actualización de software" de Preferencias del Sistema.
-          <br/>
-          <br/>
-          En tu Mac, selecciona menú Apple Preferencias del Sistema y haz clic en “Actualización de software” .<br/>
-          <br/>
-          Para instalar las actualizaciones de macOS automáticamente, selecciona “Actualizar mi Mac automáticamente”.<br/>
-          <br/>
-          Para establecer opciones de actualización avanzadas, haz clic en Avanzado y realiza cualquiera de las siguientes acciones:<br/>
-          -Para que la Mac busque actualizaciones automáticamente, selecciona “Buscar actualizaciones”.
-          <br/>
-          -Para que tu Mac descargue actualizaciones sin preguntar, selecciona “Descargar nuevas actualizaciones cuando estén disponibles”.
-          <br/>
-          -Para que la Mac instale las actualizaciones de macOS automáticamente, selecciona “Instalar actualizaciones de macOS”.
-          <br/>
-          -Para que tu Mac instale actualizaciones de apps de App Store automáticamente, selecciona “Instalar las actualizaciones de apps de App Store”.
-          <br/>
-          -Para que la Mac instale los archivos del sistema y las actualizaciones de seguridad automáticamente, selecciona “Instalar archivos de datos del sistema y actualizaciones de seguridad”.
-        </Text>
-        </Stack>
-        
-      </Stack>
-    </Container>
-    </>
+            <h2>¿Cuándo hay que buscar e instalar actualizaciones de software?</h2>
+            <p>
+            Siempre. Y conviene instalarlas lo más rápido posible.
+            Como dijimos, descargar actualizaciones e instalarlas a veces puede ser una tarea engorrosa, pero las ventajas que obtenemos valen la pena, aún cuando no siempre nos resulten evidentes. Cuando las instalamos y todo funciona como debe, por lo general prevenimos problemas, lo que hace difícil medir el perjuicio potencial de no instalarlas.
+
+Afortunadamente, los sistemas operativos y la mayoría de los programas instalados en nuestros dispositivos suelen hacer el trabajo por nosotros con muy poca o ninguna intervención, minimizando los riesgos a que estamos expuestos. Esto nos ayuda, pero no debemos bajar la guardia.
+            </p>
+            <h2>¿Cada cuánto se debe hacer mantenimiento correctivo al computador?​</h2>
+            <p>
+            Este tipo de mantenimiento no se programa en el tiempo, por el contrario, se trata de evitar, debido a esto no hay un tiempo establecido para realizarlo.
+           El mantenimiento correctivo se hace cuando el computador falla y es obligatorio.
+            </p>
+           
+            <h2>La clave: constancia y reducción de la superficie de ataque​</h2>
+            <p>
+            Para los hackers y los sistemas automáticos que utilizan (llamados robots, o «bots»), las vías para acceder a empresas y hogares incluyen una amplia variedad de dispositivos y sistemas:
+            <ul style={{ marginLeft: '3rem' }}>
+                <li>computadoras y servidores,</li>
+                <li>teléfonos y tabletas,</li>
+                <li>cámaras, sensores y hasta autos (IoT),</li>
+                <li>almacenamiento en la nube (como OneDrive o Dropbox),</li>
+                <li>y hasta las empresas que hacen el software que usamos.</li>
+              </ul>
+            </p>
+            <br />
+            <p> La solución está cerca, pero debemos cambiar nuestro modo de pensar sobre que nosotros mismos podemos hacer todo lo necesario para solucionar nuestros problemas informáticos.
+            Pedir ayuda a personal especializado puntualmente o, lo más recomendable, contratar un servicio regular de monitoreo, actualizaciones y respaldos, actualmente es el camino más seguro y económico. Aceptar nuestras debilidades nos permite aprovechar al máximo en nuestras fortalezas.
+            </p>
+          </LandingCard>
+
+          <VideoContainer>
+            <VideoPlayer  video={videoS} />
+          </VideoContainer>
+
+
+        </LandingSections>
+
+        <LandingSections>
+
+          <MaintenanceCard>
+
+            <h2>¡Agenda tu mantenimiento con nosotros!</h2>
+
+            <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
+
+            <Button onClick={()=>navigation('/tecnico')}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+
+          </MaintenanceCard>
+
+        </LandingSections>
+
+      </HelperContainer>
+
+    </MainContainer>
+
+    <Footer />
+  </>
+
 
   )
 
