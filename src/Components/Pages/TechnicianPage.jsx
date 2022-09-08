@@ -127,6 +127,7 @@ function TechnicianPage() {
                   <th>Descripción</th>
                   <th>Fecha</th>
                   <th>Hora</th>
+                  <th>Tipo M</th>
                   <th>Agendar</th>
                 </tr>
               </thead>
@@ -144,6 +145,7 @@ function TechnicianPage() {
                       <td>{i.descripcion}</td>
                       <td>{i.fecha}</td>
                       <td>{i.hora}</td>
+                      <td>{i.tipo}</td>
                       <td>
                         <GiClick
                           style={{
@@ -181,6 +183,7 @@ function TechnicianPage() {
                   <th>Descripción</th>
                   <th>Fecha</th>
                   <th>Hora</th>
+                  <th>Tipo M</th>
                   <th>Completado</th>
                 </tr>
               </thead>
@@ -198,7 +201,12 @@ function TechnicianPage() {
                       <td>{c.descripcion}</td>
                       <td>{c.fecha}</td>
                       <td>{c.hora}</td>
-                      <td><BsFillBookmarkCheckFill/></td>
+                      <td>{c.tipo}</td>
+                      <td><BsFillBookmarkCheckFill  style={{
+                            cursor: "pointer",
+                            fontSize: "1.5rem",
+                            color: "#675cb0",
+                          }}/></td>
                     </tr>
                   );
                 })}
