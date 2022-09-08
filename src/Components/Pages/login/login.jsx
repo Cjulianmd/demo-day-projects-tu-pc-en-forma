@@ -66,13 +66,13 @@ export const LogIn = () => (
               })}
               color='white'
             >
-              Inicia sesión con tu usuario registrado
+              Inicia sesión
             </Heading>
             <NavLink to="/signin">
               <HStack spacing="1" justify="center">
                 <Text color='white'>¿No te has registrado?</Text>
                 <Button variant="link" colorScheme="blue">
-                  Regístrate
+                  Hazlo aquí
                 </Button>
 
               </HStack> </NavLink>
@@ -82,7 +82,7 @@ export const LogIn = () => (
               <PasswordField />
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color='black'>
+                <Text fontSize="sm" whiteSpace="nowrap" color='white'>
                   o hazlo con:
                 </Text>
                 <Divider />
