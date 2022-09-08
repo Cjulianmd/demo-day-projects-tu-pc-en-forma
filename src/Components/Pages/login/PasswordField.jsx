@@ -9,7 +9,6 @@ import {
   Stack,
   useDisclosure,
   useMergeRefs
-
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
@@ -18,8 +17,7 @@ import { getAuth } from "firebase/auth";
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { actionLogIn } from '../../../Redux/Actions/Actions';
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
+import { doc, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../../Utils/JulianFirebase';
@@ -31,7 +29,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
   const { isOpen, onToggle } = useDisclosure()
   const inputRef = React.useRef(null)
   const mergeRef = useMergeRefs(inputRef, ref)
-  const [formValues, handleInputChange, reset] = useForm({
+  const [formValues, handleInputChange] = useForm({
     email: '',
     password: '',
   })
@@ -63,8 +61,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
               }
             })
             .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
+              // const errorCode = error.code;
+              // const errorMessage = error.message;
               toast.error('Correo o contraseña incorrectas')
             });
         }

@@ -1,15 +1,12 @@
 import { Button, ButtonGroup, VisuallyHidden } from '@chakra-ui/react'
 import { GoogleIcon } from './ProviderIcons'
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
-
-
+import { getAuth, signInWithPopup} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { actionLogIn } from '../../../Redux/Actions/Actions';
 import { toast } from 'react-toastify';
 import { db, face, google } from '../../../Utils/JulianFirebase';
 import { doc, getDoc } from 'firebase/firestore';
-// import { useNavigate } from 'react-router-dom';
 
 const providers = [
   {

@@ -1,6 +1,5 @@
 import {
   Button,
-  Checkbox,
   FormControl,
   FormLabel,
   IconButton,
@@ -10,14 +9,6 @@ import {
   Stack,
   useDisclosure,
   useMergeRefs,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
 
 } from '@chakra-ui/react'
 import { toast } from 'react-toastify';
@@ -84,13 +75,13 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       })
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        // const user = userCredential.user;
         reset()
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
         toast.error('Algo ha fallado. Contacata al administrador.')
         // ..
       });
