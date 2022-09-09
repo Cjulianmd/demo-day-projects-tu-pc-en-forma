@@ -87,7 +87,7 @@ function SetAppointmentPage() {
             <h3>Hora para atender la cita</h3>
             <Input type="text" placeholder="hh/mm" required name="hora" />
             <h3>Descripción</h3>
-            <TextArea type="text" placeholder="Escribe una pequeña descripción del problema" required name="descripción" maxlength="20" />
+            <TextArea type="text" placeholder="Escribe una pequeña descripción del problema" required name="descripcion" maxlength="20" />
           </form>
 
 
