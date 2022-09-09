@@ -1,6 +1,5 @@
 import {
   Button,
-  Checkbox,
   FormControl,
   FormLabel,
   IconButton,
@@ -10,14 +9,6 @@ import {
   Stack,
   useDisclosure,
   useMergeRefs,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
 
 } from '@chakra-ui/react'
 import { toast } from 'react-toastify';
@@ -84,14 +75,14 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       })
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        // const user = userCredential.user;
         reset()
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        toast.error(errorCode)
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        toast.error('Algo ha fallado. Contacata al administrador.')
         // ..
       });
   }
@@ -142,14 +133,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
           </InputGroup>
         </FormControl>
         <br />
-        <div style={{color: '#fff'}}>
-          <p>Tipo de cuenta:</p>
-          <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
-            <Checkbox style={{ margin: '0 0.5rem' }} defaultIsChecked>Usuario</Checkbox>
-            <Checkbox defaultIsChecked>Técnico</Checkbox>
-            <Checkbox defaultIsChecked>Admin</Checkbox>
-          </div>
-        </div>
+        
         <Stack spacing="6">
           <br />
           <Button onClick={onClicksumit} color='mute'>Registrar</Button>

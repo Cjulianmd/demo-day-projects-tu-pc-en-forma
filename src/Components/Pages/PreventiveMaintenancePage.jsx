@@ -3,12 +3,15 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Button, HelperContainer, Input, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 import Footer from '../Modules/Footer';
 import NavBar from '../Modules/NavBar';
 import VideoPlayer from '../Modules/VideoPlayer';
 
 function PreventiveMaintenancePage() {
+
+  const navigation =  useNavigate();
 
   const videoP = useSelector(state => state.ManVideos.preventivo)
 
@@ -104,7 +107,7 @@ function PreventiveMaintenancePage() {
 
               <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
 
-              <Button>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+              <Button onClick={() => navigation("/citas")}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
 
             </MaintenanceCard>
 

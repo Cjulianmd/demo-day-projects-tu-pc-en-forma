@@ -40,7 +40,13 @@ function UserProfilePage() {
       .then(() => {
         toast.success('Información actualizada con éxito.');
         let updateInfoAction = Object.assign({}, actionLogIn);
-        updateInfoAction.payload = { name: newUserInfo.name, apellidos: newUserInfo.apellidos, phone: newUserInfo.phone, isLogged: true };
+        updateInfoAction.payload = { 
+          name: newUserInfo.name,
+          apellidos: newUserInfo.apellidos,
+          email: user.email,
+          phone: newUserInfo.phone,
+          isLogged: true 
+        };
         dispatch(updateInfoAction);
         navigation("/home");
       })
@@ -95,8 +101,8 @@ function UserProfilePage() {
           <TargetContainer>
             <form onChange={setNewInfo}>
               <Input type="text" placeholder="Por favor, digita tu nombre" required name="name" />
-              <Input type="text" placeholder="Por favor, digita tu nombre" required name="apellidos" />
-              <Input type="text" placeholder="Por favor, digita tu nombre" required name="phone" />
+              <Input type="text" placeholder="Por favor, digita tus apellidos" required name="apellidos" />
+              <Input type="text" placeholder="Por favor, digita tu teléfono" required name="phone" />
             </form>
             <TestimoniesContainer>
               <Button style={{ backgroundColor: '#58E228', color: '#ffffff' }} onClick={updateUserInfo}>Guardar</Button>
