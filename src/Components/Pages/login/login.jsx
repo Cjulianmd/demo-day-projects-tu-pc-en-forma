@@ -68,7 +68,7 @@ export const LogIn = () => (
             <NavLink to="/signin">
               <HStack spacing="1" justify="center">
                 <Text color='white'>¿No te has registrado?</Text>
-                <Button variant="link" colorScheme="blue">
+                <Button variant="link" color="white">
                   Hazlo aquí
                 </Button>
 
