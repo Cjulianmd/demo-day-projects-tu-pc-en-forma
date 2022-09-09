@@ -1,10 +1,11 @@
-import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
+
 import React from 'react';
-import Navbar from '../Modules/NavBar';
+import  Navbar  from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, MaintenanceCard, MaintenanceImg, VideoContainer } from '../../Styles/StylesSebastian';
 
 function CorrectiveMaintenancePage() {
 
