@@ -64,6 +64,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
                   apellidos: formValues.lastName,
                   phone: formValues.phone,
                   email: formValues.email,
+                  admin: false
                 })
                   .then(() => {
                     toast.success('Registro exitoso.');
