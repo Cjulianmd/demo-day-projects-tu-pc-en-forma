@@ -1,12 +1,27 @@
 
 
+import { getAuth, signOut } from 'firebase/auth';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { actionLogOut } from '../../Redux/Actions/Actions';
 import { LandingImg, MainContainer } from '../../Styles/StylesSebastian';
 
 function SimpleNavBar() {
 
   const navigation = useNavigate();
+  const dispatch = useDispatch();
+
+  const letLogout = () => {
+    signOut(getAuth())
+      .then(() => {
+        let logOutAction = Object.assign({}, actionLogOut);
+        dispatch(logOutAction);
+        toast.success('Cierre de sesión exitoso.')
+        navigation("/");
+      })
+  }
 
   return (
 
@@ -23,7 +38,7 @@ function SimpleNavBar() {
 
           <span style={{marginRight: '3rem'}} className="navbar-text">
             <ul style={{ gap: '2rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item hyperlink2"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={() => navigation("/landing")}>Atrás</h6></li>
+              <li className="nav-item hyperlink2"><h6 style={{ color: '#ffffff' }} aria-current="page" onClick={letLogout}>Salir</h6></li>
             </ul>
           </span>
 

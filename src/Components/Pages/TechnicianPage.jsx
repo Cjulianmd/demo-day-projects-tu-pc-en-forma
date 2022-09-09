@@ -5,7 +5,6 @@ import {
   MainContainer,
 } from "../../Styles/StylesSebastian";
 import Footer from "../Modules/Footer";
-import NavBar from "../Modules/NavBar";
 import Table from "react-bootstrap/Table";
 import { GiClick } from "react-icons/gi";
 import {BsFillBookmarkCheckFill  } from "react-icons/bs";
@@ -25,6 +24,7 @@ import {
 import { db } from "../../Utils/JulianFirebase";
 import "../../Styles/felixCss.css";
 import { toast } from "react-toastify";
+import SimpleNavBar from "../Modules/SimpleNavBar";
 
 function TechnicianPage() {
   const [citasL, setCitasL] = useState([]);
@@ -101,7 +101,7 @@ function TechnicianPage() {
   return (
     <>
       <MainContainer>
-        <NavBar />
+        <SimpleNavBar />
         <HelperContainer>
           <LandingSections>
             <h1>Citas disponibles.</h1>
