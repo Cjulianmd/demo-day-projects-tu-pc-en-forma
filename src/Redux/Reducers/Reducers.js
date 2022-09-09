@@ -7,7 +7,8 @@ let defaultUser = {
   apellidos: '',
   phone: '',
   id: '',
-  isLogged: false
+  isLogged: false,
+  admin: false
 }
 
 let defaultVideos = {

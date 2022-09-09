@@ -9,12 +9,13 @@ import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../Utils/JulianFirebase';
 import { getVideos } from '../../Redux/Actions/Actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function HomePage() {
 
   const navigation = useNavigate();
   const dispatch = useDispatch();
+  const admin = useSelector(state => state.userLogIn.admin);
 
   useEffect(() => {
 
@@ -28,9 +29,12 @@ function HomePage() {
         }
       })
 
+      if(admin) {
+        navigation("/tecnico");
+      }
 
 
-  }, [dispatch]);
+  }, [dispatch, admin]);
 
   return (
 
