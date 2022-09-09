@@ -40,12 +40,12 @@ function UserProfilePage() {
       .then(() => {
         toast.success('Información actualizada con éxito.');
         let updateInfoAction = Object.assign({}, actionLogIn);
-        updateInfoAction.payload = { 
+        updateInfoAction.payload = {
           name: newUserInfo.name,
           apellidos: newUserInfo.apellidos,
           email: user.email,
           phone: newUserInfo.phone,
-          isLogged: true 
+          isLogged: true
         };
         dispatch(updateInfoAction);
         navigation("/home");
@@ -82,36 +82,34 @@ function UserProfilePage() {
 
     <MainContainer>
 
-      <MaintenanceCard style={{borderRadius: '25px'}}>
+      <MaintenanceCard style={{ borderRadius: '25px' }}>
 
-        <h2>Usuario</h2>
+        <h2>{user.name}</h2>
 
         <p>Esta es la información de tu perfil de usuario.</p>
-
-        <TargetContainer style={{ marginTop: '1rem' }}>
-          <p>{user.name}</p>
-          <p>{user.apellidos}</p>
-          <p>{user.phone}</p>
-        </TargetContainer>
-
-        <Button style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={showInput}>Editar perfil</Button>
-        <Button style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={()=>navigation("/home")}>Regresar</Button>
 
         {show === true ?
           <TargetContainer>
             <form onChange={setNewInfo}>
-              <Input type="text" placeholder="Por favor, digita tu nombre" required name="name" />
-              <Input type="text" placeholder="Por favor, digita tus apellidos" required name="apellidos" />
-              <Input type="text" placeholder="Por favor, digita tu teléfono" required name="phone" />
+              <Input type="text" placeholder="Por favor, actualiza tu nombre" required name="name" />
+              <Input type="text" placeholder="Por favor, actualiza tus apellidos" required name="apellidos" />
+              <Input type="text" placeholder="Por favor, actualiza tu teléfono" required name="phone" />
             </form>
             <TestimoniesContainer>
               <Button style={{ backgroundColor: '#58E228', color: '#ffffff' }} onClick={updateUserInfo}>Guardar</Button>
               <Button style={{ backgroundColor: '#ff0000', color: '#ffffff' }} onClick={letDeleteUser}>Darse de baja</Button>
+              <Button style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => setShow(false)}>Cancelar</Button>
             </TestimoniesContainer>
-          </TargetContainer> : <></>
+          </TargetContainer> : <TargetContainer style={{ marginTop: '1rem' }}>
+            <Input type="text" placeholder={user.name} required name="name" disabled />
+            <Input type="text" placeholder={user.apellidos} required name="apellidos" disabled />
+            <Input type="text" placeholder={user.phone} required name="phone" disabled />
+            <Button style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={showInput}>Editar perfil</Button>
+          </TargetContainer>
         }
 
 
+        <Button style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => navigation("/home")}>Regresar</Button>
 
       </MaintenanceCard>
 
