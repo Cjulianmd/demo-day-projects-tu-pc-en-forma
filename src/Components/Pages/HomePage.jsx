@@ -11,6 +11,7 @@ import { db } from '../../Utils/JulianFirebase';
 import { getVideos } from '../../Redux/Actions/Actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from "react-bootstrap/Table";
+import '../../Styles/StylesSebastian.css'
 
 function HomePage() {
 

@@ -29,3 +29,7 @@
   background-color: #675cb0;
   color: #fff
 }
+
+.react-strap-table{
+  border:3px solid #675cb0;
+}
