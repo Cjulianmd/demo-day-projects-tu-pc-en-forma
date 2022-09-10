@@ -83,7 +83,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
       .catch((error) => {
         // const errorCode = error.code;
         // const errorMessage = error.message;
-        toast.error('Algo ha fallado. Contacata al administrador.')
+        toast.error('Algo ha fallado. Contacta al administrador.')
         // ..
       });
   }
