@@ -31,10 +31,10 @@ export const OAuthButtonGroup = () => {
       getDoc(doc(db, 'Clientes', auth.currentUser.uid))
         .then(doc => {
           if (doc.exists) {
-            let userData = doc.data();
             let logInaction = Object.assign({}, actionLogIn);
-            logInaction.payload = { name: user.displayName, email: user.email, isLogged: true, phone: userData.phone, avatar: user.photoURL };
+            logInaction.payload = { name: user.displayName, email: user.email, phone: '0', isLogged: true };
             dispatch(logInaction);
+            toast.warn('Por favor, completa tu información en la sección de perfil de usuario.')
             navigation("/user");
           } else {
             toast.error('Por favor, contacta al administrador del sitio. Ha ocurrido un error.')
