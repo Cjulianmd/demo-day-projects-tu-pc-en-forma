@@ -33,7 +33,7 @@ export const OAuthButtonGroup = () => {
           if (doc.exists) {
             let userData = doc.data();
             let logInaction = Object.assign({}, actionLogIn);
-            logInaction.payload = { name: user.displayName, email: user.email, isLogged: true, phone: userData.phone };
+            logInaction.payload = { name: user.displayName, email: user.email, isLogged: true, phone: userData.phone, avatar: user.photoURL };
             dispatch(logInaction);
             navigation("/user");
           } else {

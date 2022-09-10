@@ -52,6 +52,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
                   apellidos: userData.apellidos,
                   phone: userData.phone,
                   admin: userData.admin,
+                  avatar: auth.currentUser.photoURL,
                   isLogged: true
                 };
                 dispatch(logInaction);
