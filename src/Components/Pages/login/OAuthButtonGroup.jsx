@@ -31,8 +31,12 @@ export const OAuthButtonGroup = () => {
       getDoc(doc(db, 'Clientes', auth.currentUser.uid))
         .then(doc => {
           if (doc.exists) {
+            let tempName = user.displayName.split(' ');
+            let nombre = tempName[0];
+            let apellido = tempName[1];
             let logInaction = Object.assign({}, actionLogIn);
-            logInaction.payload = { name: user.displayName, email: user.email, phone: '0', isLogged: true };
+            console.log(user.photoURL)
+            logInaction.payload = { name: nombre, email: user.email, apellidos: apellido, phone: '0', avatar: user.photoURL, isLogged: true };
             dispatch(logInaction);
             toast.warn('Por favor, completa tu información en la sección de perfil de usuario.')
             navigation("/user");
@@ -116,7 +120,7 @@ export const OAuthButtonGroup = () => {
   const onClickGogle = () => {
     signInWithPopup(auth, google)
       .then((result) => {
-
+        console.log(result)
         checkLogIn(result.user)
 
         // // The signed-in user info.

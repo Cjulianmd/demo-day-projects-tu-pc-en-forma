@@ -83,8 +83,18 @@ function UserProfilePage() {
     <MainContainer>
 
       <MaintenanceCard style={{ borderRadius: '25px' }}>
+        
+        <h2>{user.name} {user.apellidos}</h2>
 
-        <h2>{user.name}</h2>
+        {user.avatar ?
+
+           <img style={{width: '5%', borderRadius: '50%'}} src={user.avatar} alt="Usuario Foto" />
+
+          : 
+
+          <img style={{width: '5%', borderRadius: '50%'}} src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1660799782/BuffaloApp/User-Profile-Transparent_lfytwr.png" alt="Usuario Foto" />
+
+          }
 
         <p>Esta es la información de tu perfil de usuario.</p>
 
