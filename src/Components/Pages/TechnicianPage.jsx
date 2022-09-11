@@ -18,9 +18,7 @@ import {
   documentId,
   getDoc,
   getDocs,
-
   query,
-
   updateDoc,
   where,
 } from "firebase/firestore";
@@ -69,7 +67,7 @@ function TechnicianPage() {
           })
       });
 
-  }, [setCitasL, setCitasT]);
+  }, [setCitasL, setCitasT, tecnico]);
 
   const escogerCita = (index) => {
     updateDoc(doc(db, "Tecnicos", tecnico.id), {

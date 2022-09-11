@@ -1,6 +1,6 @@
 
 import React from 'react';
-import  Navbar  from '../Modules/NavBar';
+import Navbar from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
 import { useSelector } from 'react-redux';

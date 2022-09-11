@@ -50,7 +50,7 @@ function HomePage() {
       });
 
 
-  }, [dispatch, user, setCitasU]);
+  }, [dispatch, user, setCitasU, navigation]);
 
   return (
 
