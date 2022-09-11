@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-
   Container,
   Divider,
   Heading,
@@ -9,13 +8,11 @@ import {
   Stack,
   Text,
   useBreakpointValue,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { NavLink } from 'react-router-dom';
 import { PasswordField } from './PasswordField'
 import { OAuthButtonGroup } from './OAuthButtonGroup';
-import { useNavigate } from 'react-router-dom';
 
 export const LogIn = () => (
 
@@ -66,13 +63,13 @@ export const LogIn = () => (
               })}
               color='white'
             >
-              Inicia sesión con tu usuario registrado
+              Inicia sesión
             </Heading>
             <NavLink to="/signin">
               <HStack spacing="1" justify="center">
                 <Text color='white'>¿No te has registrado?</Text>
-                <Button variant="link" colorScheme="blue">
-                  Regístrate
+                <Button variant="link" color="white">
+                  Hazlo aquí
                 </Button>
 
               </HStack> </NavLink>
@@ -82,7 +79,7 @@ export const LogIn = () => (
               <PasswordField />
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color='black'>
+                <Text fontSize="sm" whiteSpace="nowrap" color='white'>
                   o hazlo con:
                 </Text>
                 <Divider />

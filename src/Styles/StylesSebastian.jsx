@@ -203,6 +203,29 @@ export const ToolsContainer = styled.div`
 export const TargetContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 90%;
   justify-content: center;
   align-items: center;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  width: 100%;
+	margin: 30px auto;
+	background: #fff;
+	border-radius: 8px;
+	padding: 20px;
 `;
