@@ -220,10 +220,6 @@ function TechnicianPage() {
                 </tbody>
               </Table>
             </TestimoniesContainer>
-            <h1>Citas agendadas.</h1>
-            <p style={{ margin: "1.5rem 0" }}>
-              Estas son las citas agendadas en el sistema.
-            </p>
           </LandingSections>
         </HelperContainer>
       </MainContainer>
