@@ -1,5 +1,3 @@
-//! Sebastian
-
 
 import React from 'react';
 import '../../Styles/StylesSebastian.css'
@@ -65,16 +63,16 @@ function Footer() {
                   Servicios
                 </h6>
                 <p>
-                  <a className="text-reset">Mantenimiento preventivo</a>
+                  <a href="#" className="text-reset">Mantenimiento preventivo</a>
                 </p>
                 <p>
-                  <a className="text-reset">Mantenimiento correctivo</a>
+                  <a href="#" className="text-reset">Mantenimiento correctivo</a>
                 </p>
                 <p>
-                  <a className="text-reset">Actualización de software</a>
+                  <a href="#" className="text-reset">Actualización de software</a>
                 </p>
                 <p>
-                  <a className="text-reset">Compra de hardware</a>
+                  <a href="#" className="text-reset">Compra de hardware</a>
                 </p>
               </div>
 

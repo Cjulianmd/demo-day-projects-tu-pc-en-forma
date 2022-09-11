@@ -17,7 +17,7 @@ function UnloggedNavBar() {
 
         <div className="container-fluid">
           <LandingImg onClick={() => navigation("/landing")} className="hyperlink" src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
-          <a style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>Tu PC en Forma</a>
+          <a href="#" style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>Tu PC en Forma</a>
           <button
             className="navbar-toggler"
             type="button"
@@ -33,7 +33,7 @@ function UnloggedNavBar() {
 
             <ul style={{ marginLeft: '3rem' }} className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a style={{ color: '#ffffff' }} className="nav-link active hyperlink2" aria-current="page" onClick={() => navigation("/landing")}>Inicio</a>
+                <a href="#" style={{ color: '#ffffff' }} className="nav-link active hyperlink2" aria-current="page" onClick={() => navigation("/landing")}>Inicio</a>
               </li>
 
             </ul>

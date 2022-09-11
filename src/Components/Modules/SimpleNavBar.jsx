@@ -31,7 +31,7 @@ function SimpleNavBar() {
 
         <div className="container-fluid">
 
-          <a style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>
+          <a href="#" style={{ color: '#ffffff' }} className="navbar-brand hyperlink" onClick={() => navigation("/landing")}>
             <LandingImg src="https://res.cloudinary.com/dtxqusdhr/image/upload/v1662134335/Demoday/logo_vlilbq.png" />
             <small>Tu PC en Forma</small>
           </a>
