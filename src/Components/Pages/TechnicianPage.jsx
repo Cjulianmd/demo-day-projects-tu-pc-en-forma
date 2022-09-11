@@ -224,60 +224,6 @@ function TechnicianPage() {
             <p style={{ margin: "1.5rem 0" }}>
               Estas son las citas agendadas en el sistema.
             </p>
-            <TestimoniesContainer>
-              <Table
-                className="react-strap-table"
-                striped
-                bordered
-                hover
-                size="sm"
-              >
-                <thead>
-                  <tr>
-                    <th>Cita</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>DNI</th>
-                    <th>Equipo</th>
-                    <th>Teléfono</th>
-                    <th>Correo</th>
-                    <th>Descripción</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Tipo M</th>
-                    <th>Completado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {citasT.map((c, index, citasT) => {
-                    return (
-                      <tr>
-                        <td>{index + 1}</td>
-                        <td>{c.name}</td>
-                        <td>{c.apellidos}</td>
-                        <td>{c.DNI}</td>
-                        <td>{c.equipo}</td>
-                        <td>{c.telefono}</td>
-                        <td>{c.correo}</td>
-                        <td>{c.descripcion}</td>
-                        <td>{c.fecha}</td>
-                        <td>{c.hora}</td>
-                        <td>{c.tipo}</td>
-                        <td>
-                          <BsFillBookmarkCheckFill
-                            style={{
-                              cursor: "pointer",
-                              fontSize: "1.5rem",
-                              color: "#675cb0",
-                            }}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </Table>
-            </TestimoniesContainer>
           </LandingSections>
         </HelperContainer>
       </MainContainer>
