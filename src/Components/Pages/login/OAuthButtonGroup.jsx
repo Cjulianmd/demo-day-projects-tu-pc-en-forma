@@ -31,10 +31,13 @@ export const OAuthButtonGroup = () => {
       getDoc(doc(db, 'Clientes', auth.currentUser.uid))
         .then(doc => {
           if (doc.exists) {
-            let userData = doc.data();
+            let tempName = user.displayName.split(' ');
+            let nombre = tempName[0];
+            let apellido = tempName[1];
             let logInaction = Object.assign({}, actionLogIn);
-            logInaction.payload = { name: user.displayName, email: user.email, isLogged: true, phone: userData.phone };
+            logInaction.payload = { name: nombre, email: user.email, apellidos: apellido, phone: '0', avatar: user.photoURL, isLogged: true };
             dispatch(logInaction);
+            toast.warn('Por favor, completa tu información en la sección de perfil de usuario.')
             navigation("/user");
           } else {
             toast.error('Por favor, contacta al administrador del sitio. Ha ocurrido un error.')
@@ -66,99 +69,24 @@ export const OAuthButtonGroup = () => {
 
         checkLogIn(result.user);
 
-        // The signed-in user info.
-        // const user = result.user;
-
-        // // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        // const credential = FacebookAuthProvider.credentialFromResult(result);
-        // const accessToken = credential.accessToken;
-        // console.log(accessToken)
-        // console.log(user);
-        // let userData = user;
-        // let logInaction = Object.assign({}, actionLogIn);
-        // logInaction.payload = {
-        //   name: auth.currentUser.displayName,
-        //   id: auth.currentUser.uid,
-        //   email: userData.email,
-        //   apellidos: userData.apellidos,
-        //   phone: userData.phoneNumber,
-        //   isLogged: true
-        // };
-        // dispatch(logInaction);
-        // toast.success('Bienvenido.')
-        // navigation("/user");
-
-
-        // ...
       })
       .catch((error) => {
 
         checkLoginErr(error.code);
 
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // console.log(errorCode)
-        // const errorMessage = error.message;
-        // console.log(errorMessage)
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // console.log(email)
-        // // The AuthCredential type that was used.
-        // const credential = FacebookAuthProvider.credentialFromError(error);
-        // console.log(credential)
-        // const user = error.customData;
-        // console.log(user);
-
-        // ...
       });
 
   }
   const onClickGogle = () => {
     signInWithPopup(auth, google)
       .then((result) => {
-
         checkLogIn(result.user)
 
-        // // The signed-in user info.
-        // const user = result.user;
-        // // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        // const credential = FacebookAuthProvider.credentialFromResult(result);
-        // const accessToken = credential.accessToken;
-        // console.log(accessToken)
-        // console.log(user);
-        // let userData = user;
-        // let logInaction = Object.assign({}, actionLogIn);
-        // logInaction.payload = {
-        //   name: auth.currentUser.displayName,
-        //   id: auth.currentUser.uid,
-        //   email: userData.email,
-        //   apellidos: userData.apellidos,
-        //   phone: userData.phoneNumber,
-        //   isLogged: true
-        // };
-        // dispatch(logInaction);
-        // toast.success('Bienvenido.')
-        // navigation("/user");
       })
       .catch((error) => {
 
         checkLoginErr(error.code);
 
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // console.log(errorCode)
-        // const errorMessage = error.message;
-        // console.log(errorMessage)
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // console.log(email)
-        // // The AuthCredential type that was used.
-        // const credential = FacebookAuthProvider.credentialFromError(error);
-        // console.log(credential)
-        // const user = error.customData;
-        // console.log(user);
-
-        // ...
       });
   }
   return (

@@ -24,6 +24,7 @@ function SetAppointmentPage() {
     equipo: '',
     fecha: '',
     hora: '',
+    tipo: '',
     telefono: user.phone
   });
 
@@ -46,6 +47,7 @@ function SetAppointmentPage() {
       fecha: appointmentInfo.fecha,
       hora: appointmentInfo.hora,
       tecnico: '',
+      tipo: appointmentInfo.tipo,
       telefono: appointmentInfo.telefono
     })
     .then(() =>{
@@ -82,6 +84,8 @@ function SetAppointmentPage() {
             <Input type="text" placeholder={user.email} required name="email" disabled />
             <h3>Marca del equipo</h3>
             <Input type="text" placeholder="Indica la marca de tu equipo" required name="equipo" />
+            <h3>Tipo de mantenimiento</h3>
+            <Input type="text" placeholder="Indica el tipo de mantenimiento" required name="tipo" />
             <h3>Fecha para atender la cita</h3>
             <Input type="text" placeholder="dd/mm/aaaa" required name="fecha" />
             <h3>Hora para atender la cita</h3>

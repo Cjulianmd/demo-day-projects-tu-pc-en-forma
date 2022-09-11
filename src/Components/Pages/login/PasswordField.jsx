@@ -51,6 +51,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
                   email: userData.email,
                   apellidos: userData.apellidos,
                   phone: userData.phone,
+                  admin: userData.admin,
+                  avatar: auth.currentUser.photoURL,
                   isLogged: true
                 };
                 dispatch(logInaction);
@@ -60,13 +62,12 @@ export const PasswordField = React.forwardRef((props, ref) => {
                 toast.error('Por favor, contacta al administrador del sitio. Ha ocurrido un error.')
               }
             })
-            .catch((error) => {
-              // const errorCode = error.code;
-              // const errorMessage = error.message;
-              toast.error('Correo o contraseña incorrectas')
-            });
+
         }
       })
+      .catch((error) => {
+        checkLoginErr(error.code);
+      });
   }
   const onClickReveal = () => {
 
@@ -77,6 +78,20 @@ export const PasswordField = React.forwardRef((props, ref) => {
         preventScroll: true,
 
       })
+    }
+  }
+
+  const checkLoginErr = (code) => {
+    switch (code) {
+      case "auth/user-not-found":
+      case "auth/wrong-password":
+        toast.warn("Correo o contraseña incorrectos.");
+        break;
+      case "auth/too-many-requests":
+        toast.warn("El correo de verificación ha sido enviado muchas veces. Contacta al administrador.");
+        break;
+      default:
+        break;
     }
   }
 

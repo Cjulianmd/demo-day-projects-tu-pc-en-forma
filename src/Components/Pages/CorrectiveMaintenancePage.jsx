@@ -1,6 +1,6 @@
 
 import React from 'react';
-import  Navbar  from '../Modules/NavBar';
+import Navbar from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import VideoPlayer from '../Modules/VideoPlayer';
 import { useSelector } from 'react-redux';
@@ -108,7 +108,7 @@ function CorrectiveMaintenancePage() {
 
               <p>Confía en nuestros <em>DT</em> expertos para que mantengan en forma tu equipo y, así, esté siempre listo para los partidos en los cuales lo inscrba, alcanzando tus metas y cumpliendo con tus proyectos.</p>
 
-              <Button onClick={() => navigation('/tecnico')}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
+              <Button onClick={() => navigation("/citas")}>Agenda tu cita</Button>  {/* AQUÍ SE DIRECCIONARÁ A LA VISTA QUE CONSTRUYÓ JULIÁN */}
 
             </MaintenanceCard>
 

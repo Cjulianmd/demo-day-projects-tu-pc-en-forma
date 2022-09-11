@@ -9,7 +9,6 @@ import {
   Stack,
   useDisclosure,
   useMergeRefs,
-
 } from '@chakra-ui/react'
 import { toast } from 'react-toastify';
 import { doc, setDoc } from "firebase/firestore";
@@ -64,6 +63,7 @@ export const Inputsigin = React.forwardRef((props, ref) => {
                   apellidos: formValues.lastName,
                   phone: formValues.phone,
                   email: formValues.email,
+                  admin: false
                 })
                   .then(() => {
                     toast.success('Registro exitoso.');
@@ -74,16 +74,10 @@ export const Inputsigin = React.forwardRef((props, ref) => {
           })
       })
       .then((userCredential) => {
-        // Signed in
-        // const user = userCredential.user;
         reset()
-        // ...
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        toast.error('Algo ha fallado. Contacata al administrador.')
-        // ..
+        toast.error('Algo ha fallado. Contacta al administrador.')
       });
   }
 

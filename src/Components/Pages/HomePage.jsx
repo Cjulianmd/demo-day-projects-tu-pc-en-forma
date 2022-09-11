@@ -1,20 +1,25 @@
 //! Félix
 
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, HelperContainer, LandingCard, LandingSections, MainContainer, TestimoniesContainer } from '../../Styles/StylesSebastian';
 import NavBar from '../Modules/NavBar';
 import Footer from '../Modules/Footer';
 import { useNavigate } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../Utils/JulianFirebase';
 import { getVideos } from '../../Redux/Actions/Actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import Table from "react-bootstrap/Table";
+import '../../Styles/StylesSebastian.css'
 
 function HomePage() {
 
   const navigation = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector(state => state.userLogIn);
+
+  const [citasU, setCitasU] = useState([])
 
   useEffect(() => {
 
@@ -28,9 +33,24 @@ function HomePage() {
         }
       })
 
+    if (user.admin) {
+      navigation("/tecnico");
+    }
+
+    getDocs(query(collection(db, "Citas"), where('name', '==', user.name)))
+      .then((response) => {
+        let listaCitas = [];
+        response.forEach(
+          (doc) => {
+            listaCitas.push(doc.data());
+          },
+          [listaCitas]
+        );
+        setCitasU(listaCitas);
+      });
 
 
-  }, [dispatch]);
+  }, [dispatch, user, setCitasU, navigation]);
 
   return (
 
@@ -41,6 +61,54 @@ function HomePage() {
         <NavBar />
 
         <HelperContainer>
+
+          {citasU.length === 0 ? <LandingSections>
+
+            <h1>Hola, {user.name}.</h1>
+
+            <p style={{ marginBottom: '1.5rem', marginTop: '2rem' }}>Te invitamos a iniciar el cuidado de tus equipos con nostros.</p>
+
+          </LandingSections> : <LandingSections>
+
+            <h1>Hola, {user.name}.</h1>
+            <p style={{ marginBottom: '1.5rem', marginTop: '2rem' }}>Aquí puedes ver las citas que has solicitado.</p>
+
+            <TestimoniesContainer>
+              <Table
+                striped
+                bordered
+                hover
+                size="sm"
+                className="react-strap-table table-hover table-header"
+              >
+                <thead>
+                  <tr>
+                    <th style={{width: '3%'}}>#</th>
+                    <th style={{width: '20%'}}>Tipo Mantenimiento</th>
+                    <th style={{width: '15%'}}>Fecha</th>
+                    <th style={{width: '15%'}}>Hora</th>
+                    <th style={{width: '15%'}}>Estado</th>
+                    <th style={{width: '20%'}}>Técnico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {citasU.map((i, index, citasU) => {
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{i.tipo}</td>
+                        <td>{i.fecha}</td>
+                        <td>{i.hora}</td>
+                        <td>{i.estado}</td>
+                        <td>{i.tecnico}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            </TestimoniesContainer>
+
+          </LandingSections>}
 
           <LandingSections>
 
