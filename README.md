@@ -11,7 +11,7 @@ Repositorio del Proyecto Final o _demoday_ del bootcamp de academia geek. En est
 
 ## Herramientas 🛠️
 
-El proyecto fue construído con ReactJS, apoyado con React-Bootstrap, Bootstrap, React-Icons, React-Router-Dom, Redux, React-Redux, Chakra, Firebase, Firestore, Styled-Components y Normalize. Y fue desplegado con Firebase Hosting.
+El proyecto fue construído con ReactJS, apoyado con React-Bootstrap, Bootstrap, MDB, React-Icons, React-Router-Dom, VideoPlayer, Redux, React-Redux, Chakra, Firebase, Firestore, Styled-Components y Normalize. Y fue desplegado con Firebase Hosting.
 
 ## Autores ✒️
 
