@@ -73,38 +73,40 @@ function HomePage() {
             <h1>Hola, {user.name}.</h1>
             <p style={{ marginBottom: '1.5rem', marginTop: '2rem' }}>Aquí puedes ver las citas que has solicitado.</p>
 
-            <Table
-              striped
-              bordered
-              hover
-              size="sm"
-              className="react-strap-table"
-            >
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Tipo Mantenimiento</th>
-                  <th>Fecha</th>
-                  <th>Hora</th>
-                  <th>Estado</th>
-                  <th>Técnico</th>
-                </tr>
-              </thead>
-              <tbody>
-                {citasU.map((i, index, citasU) => {
-                  return (
-                    <tr>
-                      <td>{index + 1}</td>
-                      <td>{i.tipo}</td>
-                      <td>{i.fecha}</td>
-                      <td>{i.hora}</td>
-                      <td>{i.estado}</td>
-                      <td>{i.tecnico}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </Table>
+            <TestimoniesContainer>
+              <Table
+                striped
+                bordered
+                hover
+                size="sm"
+                className="react-strap-table table-hover table-header"
+              >
+                <thead>
+                  <tr>
+                    <th style={{width: '3%'}}>#</th>
+                    <th style={{width: '20%'}}>Tipo Mantenimiento</th>
+                    <th style={{width: '15%'}}>Fecha</th>
+                    <th style={{width: '15%'}}>Hora</th>
+                    <th style={{width: '15%'}}>Estado</th>
+                    <th style={{width: '20%'}}>Técnico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {citasU.map((i, index, citasU) => {
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{i.tipo}</td>
+                        <td>{i.fecha}</td>
+                        <td>{i.hora}</td>
+                        <td>{i.estado}</td>
+                        <td>{i.tecnico}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            </TestimoniesContainer>
 
           </LandingSections>}
 

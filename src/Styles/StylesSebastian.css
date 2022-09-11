@@ -31,5 +31,16 @@
 }
 
 .react-strap-table{
-  border:3px solid #675cb0;
+  border: 3px solid #675cb0;
+}
+
+.table-hover tbody tr:hover {
+  color: #ffffff !important;
+  background-color: #9888ff;
+}
+
+.table-header thead th {
+  background-color: #675cb0;
+  color: #ffffff !important;
+  border: 1px solid #ffffff;
 }
