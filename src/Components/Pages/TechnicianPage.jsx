@@ -10,10 +10,14 @@ import Table from "react-bootstrap/Table";
 import { GiClick } from "react-icons/gi";
 import {BsFillBookmarkCheckFill  } from "react-icons/bs";
 import {
+  arrayRemove,
   arrayUnion,
   collection,
+  deleteDoc,
+  deleteField,
   doc,
   documentId,
+  FieldValue,
   getDoc,
   getDocs,
 
@@ -27,9 +31,10 @@ import "../../Styles/felixCss.css";
 import { toast } from "react-toastify";
 
 function TechnicianPage() {
+
   const [citasL, setCitasL] = useState([]);
   const [citasT, setCitasT] = useState([]);   //TODO AGREGAR EL VALOR POR DEFECTO DE LAS CITAS DEL TECNICO
-
+ 
 
 
   useEffect(() => {
@@ -43,21 +48,21 @@ function TechnicianPage() {
         [listaCitas]
       );
       setCitasL(listaCitas);
-      console.log(listaCitas);
+      //console.log(listaCitas);
     });
 
     getDoc(doc(db, "Tecnicos", '1230'))
     .then((response) => {
      
     let dataTecnico = response.data() 
-    console.log(dataTecnico);
+    //console.log(dataTecnico);
     getDocs(query(collection(db, "Citas"), where(documentId(), 'in', dataTecnico.citas)))
     .then((response)=>{
        
         let listaCitas = [];
         response.forEach(
           (doc) => {
-            console.log(doc.data());
+           // console.log(doc.data());
             listaCitas.push(doc.data());
           },
           [listaCitas]
@@ -78,9 +83,7 @@ function TechnicianPage() {
   
   ) => {
     updateDoc(doc(db, "Tecnicos", "1230"), {
-      citas: arrayUnion(
-        citasL[index].DNI
-      ),
+      citas: arrayUnion(citasL[index].DNI ),
     }).then(() => {
         updateDoc(doc(db, "Citas", citasL[index].DNI ), {estado:'agendada', tecnico: 'name'})
         .then(()=>{
@@ -202,7 +205,7 @@ function TechnicianPage() {
                       <td>{c.fecha}</td>
                       <td>{c.hora}</td>
                       <td>{c.tipo}</td>
-                      <td><BsFillBookmarkCheckFill  style={{
+                      <td><BsFillBookmarkCheckFill style={{
                             cursor: "pointer",
                             fontSize: "1.5rem",
                             color: "#675cb0",
