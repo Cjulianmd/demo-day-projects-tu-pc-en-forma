@@ -90,7 +90,7 @@ function TechnicianPage() {
   };
 
   const completarCita = (index) => {
-    updateDoc(doc(db, "Tecnicos", "1230"), {
+    updateDoc(doc(db, "Tecnicos", tecnico.id), {
       citas: arrayRemove(
         citasT[index].DNI
       )
