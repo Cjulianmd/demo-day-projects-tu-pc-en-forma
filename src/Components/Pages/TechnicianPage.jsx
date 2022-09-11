@@ -30,8 +30,8 @@ import { useSelector } from "react-redux";
 
 function TechnicianPage() {
   const [citasL, setCitasL] = useState([]);
-  const [citasT, setCitasT] = useState([]);   //TODO AGREGAR EL VALOR POR DEFECTO DE LAS CITAS DEL TECNICO
-  const tecnico = useSelector(state => state.userLogIn)
+  const [citasT, setCitasT] = useState([]);
+  const tecnico = useSelector(state => state.userLogIn);
 
 
 
